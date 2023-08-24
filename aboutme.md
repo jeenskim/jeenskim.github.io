@@ -9,7 +9,7 @@ subtitle: Thanks for coming to my Webpage.
 Hi, my name is Hojin Kim. 
 I am a research assistant at the Department of Aerospace Engineering, Seoul National University, South Korea
 
-My research interests are computational fluid mechanics(CFD), machine learning, rotorcraft, and aeroacoustics.
+My research interests are **computational fluid mechanics(CFD), machine learning**, rotorcraft, and aeroacoustics.
 
 #### Education
 
