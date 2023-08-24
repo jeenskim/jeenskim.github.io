@@ -4,6 +4,8 @@ title: About me
 subtitle: Thanks for coming to my Webpage.
 ---
 
+![Profile](https://jeenskim.github.io/assets/img/profile.jpg){: .align-left}
+
 Hi, my name is Hojin Kim. 
 I am a research assistant at the Department of Aerospace Engineering, Seoul National University, South Korea
 
