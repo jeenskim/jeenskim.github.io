@@ -3,6 +3,7 @@ layout: page
 title: About me
 subtitle: Thanks for coming to my Webpage.
 ---
+![profile](https://github.com/jeenskim/jeenskim.github.io/assets/143062368/5d41eb8f-c2e1-46b1-af96-44eca38e0e58){: width="30%" height="30%"}
 
 ![Profile](https://jeenskim.github.io/assets/img/profile.PNG){: width="30%" height="30%"}
 
