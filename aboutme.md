@@ -5,6 +5,7 @@ subtitle: Thanks for coming to my Webpage.
 ---
 
 ![Profile](https://jeenskim.github.io/assets/img/profile.PNG){: width="30%" height="30%"}
+
 Hi, my name is Hojin Kim. 
 I am a research assistant at the Department of Aerospace Engineering, Seoul National University, South Korea
 
