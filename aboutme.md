@@ -6,10 +6,10 @@ subtitle: Thanks for coming to my Webpage.
 
 ![Profile](https://jeenskim.github.io/assets/img/profile.PNG){: width="30%" height="30%"}
 
-Hi, my name is Hojin Kim. 
-I am a research assistant at the Department of Aerospace Engineering, Seoul National University, South Korea
-
-My research interests are **computational fluid mechanics(CFD), machine learning**, rotorcraft, and aeroacoustics.
+Hi, my name is Hojin Kim. <br>
+I am a research assistant at the Department of Aerospace Engineering, Seoul National University, South Korea <br>
+<br>
+My research interests are **computational fluid mechanics(CFD), machine learning**, rotorcraft, and aeroacoustics.<br>
 
 #### Education
 
