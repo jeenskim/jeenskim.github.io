@@ -6,7 +6,7 @@ full-width: true
 
 ## Research experiences in SNU
 
-![Slide1](https://jeenskim.github.io/assets/img/Slide1.PNG){: width="80%" height="80%"}
+![Slide1](https://jeenskim.github.io/assets/img/Slide1.PNG){: width="80%" height="80%"} {: .align-center}
 
 ![Slide2](https://jeenskim.github.io/assets/img/Slide2.PNG){: width="80%" height="80%"}
 
