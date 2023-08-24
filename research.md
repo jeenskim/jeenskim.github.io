@@ -1,8 +1,9 @@
 ---
 layout: page
 title : My Research Experiences
----
 full-width: true
+---
+
 ## Research experiences in SNU
 
 ![Slide1](https://jeenskim.github.io/assets/img/Slide1.PNG){: width="110%" height="110%"}
