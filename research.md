@@ -1,7 +1,8 @@
 ---
 layout: page
-title: My research experiences
 ---
+
+# My research experiences
 
 ![Crepe](https://beautifuljekyll.com/assets/img/crepe.jpg)
 
