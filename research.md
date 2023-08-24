@@ -3,7 +3,7 @@ layout: page
 title : My Research Experiences
 ---
 
-# Research experiences in SNU
+## Research experiences in SNU
 
 ![Slide1](https://jeenskim.github.io/assets/img/Slide1.PNG)
 
