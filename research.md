@@ -4,7 +4,8 @@ title : My Research Experiences
 full-width: true
 ---
 
-## Research experiences in SNU
+Research experiences in SNU
+---------------------------
 
 ![Slide1](https://jeenskim.github.io/assets/img/Slide1.PNG){: width="80%" height="80%"} {: .align-center}
 
