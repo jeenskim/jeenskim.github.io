@@ -13,8 +13,8 @@ My research interests are **computational fluid mechanics(CFD), machine learning
 
 #### Education
 
-M.S., Aerospace Engineering, Seoul National University, 2021.03 - 2023.02<br>
-B.S., Aerospace Engineering, Seoul National University, 2015.03 - 2021.02<br>
+M.S., Aerospace Engineering, Seoul National University, 2021.03 - 2023.02 <br>
+B.S., Aerospace Engineering, Seoul National University, 2015.03 - 2021.02 <br>
 (Served military service in Special Warfare School of ROK Army Special Force, 2016.03 - 2017.12)
 
 #### Experience
