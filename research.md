@@ -4,7 +4,7 @@ title : My Research Experiences
 full-width: true
 ---
 
-Research experiences in SNU
+Research experiences @ Seoul National University
 ---------------------------
 
 ![Slide1](https://jeenskim.github.io/assets/img/Slide1.PNG){: width="90%" height="90%"}
