@@ -15,9 +15,9 @@ tags: [Theory]
     - Spatial(Classical) POD method
     - Method of snapshots
     - SVD and POD
-      
   - Notes
   - Strengths and weakness
+    
 
 
 
