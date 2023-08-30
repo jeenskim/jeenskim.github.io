@@ -12,7 +12,7 @@ tags: [Theory]
 
 
 1. Eigenvalue Decomposition
-For a given matrix, $A\in \mathbb{R}$
+For a given matrix, $A\in \mathbb{R}^{n \times n}$
 
 2. Singular Value Decomposition
 3. Relationship Between Eigenvalue and Singular Value Decompositions
