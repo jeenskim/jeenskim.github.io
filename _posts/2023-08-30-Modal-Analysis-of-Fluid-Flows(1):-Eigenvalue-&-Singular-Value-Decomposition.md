@@ -12,7 +12,11 @@ tags: [Theory]
 
 This is test
 
+1. Eigenvalue Decomposition
 
+
+
+2. Singular Value Decomposition
 
 
 
