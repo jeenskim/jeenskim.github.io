@@ -12,11 +12,12 @@ tags: [Theory]
 
 
 1. Eigenvalue Decomposition
-For a given matrix $A \in \mathbb{C}^{n \times n}$, a vector $v \in \mathbb{C}^{n}$ and a scalar $\lambda \in \mathbb{C}$ are called as eigenvector and eigenvalue, respectively.
+For a given matrix $A \in \mathbb{C}^{n \times n}$, a vector $v \in \mathbb{C}^{n}$ and a scalar $\lambda \in \mathbb{C}$ are called as eigenvector and eigenvalue, respectively, if they satisfy the following:
+$A\lambda\,=\,\lambdav$
 
-2. Singular Value Decomposition
-3. Relationship Between Eigenvalue and Singular Value Decompositions
-4. Pseudospectra
+3. Singular Value Decomposition
+4. Relationship Between Eigenvalue and Singular Value Decompositions
+5. Pseudospectra
 
 
 
