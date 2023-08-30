@@ -11,8 +11,8 @@ tags: [Theory]
 ### This content is based on *"Modal Analysis of Fluids Flows: An Overview"* by Kunihiko Taira et al. [^1]. 
 
 
-1. Eigenvalue Decomposition
-For a given matrix $A \in \mathbb{C}^{n \times n}$, a vector $v \in \mathbb{C}^{n}$ and a scalar $\lambda \in \mathbb{C}$ are called as eigenvector and eigenvalue, respectively, if they satisfy the following:
+1. Eigenvalue Decomposition<br>
+For a given matrix $A \in \mathbb{C}^{n \times n}$, a vector $v \in \mathbb{C}^{n}$ and a scalar $\lambda \in \mathbb{C}$ are called as eigenvector and eigenvalue, respectively, if they satisfy the following:<br>
 $A\lambda \,= \,\lambda v$ 
 
 3. Singular Value Decomposition
