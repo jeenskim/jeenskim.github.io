@@ -12,6 +12,8 @@ tags: [Theory]
 
 
 1. Eigenvalue Decomposition
+For a given matrix, $A\in \mathbb{R}$
+
 2. Singular Value Decomposition
 3. Relationship Between Eigenvalue and Singular Value Decompositions
 4. Pseudospectra
