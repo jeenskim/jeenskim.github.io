@@ -2,8 +2,8 @@
 layout: post
 title: Proper Orthogonal Decomposition
 cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/thumb.png
-share-img: /assets/img/path.jpg
+thumbnail-img: /assets/img/POD_thumb.png
+share-img: /assets/img/POD_thumb.png
 tags: [Theory]
 ---
 
