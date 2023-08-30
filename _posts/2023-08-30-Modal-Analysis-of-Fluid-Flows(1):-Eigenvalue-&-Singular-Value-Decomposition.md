@@ -2,9 +2,9 @@
 layout: post
 title: Eigenvalue and Singular Value Decomposition
 subtitle: Backbone for all decomposition techniques and modal analysis
-cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/thumb.png
-share-img: /assets/img/path.jpg
+cover-img: /assets/img/Eigen_SVD_thumbnail.png 
+thumbnail-img: /assets/img/Eigen_SVD_thumbnail.png
+share-img: /assets/img/Eigen_SVD_thumbnail.png
 tags: [Theory]
 ---
 
