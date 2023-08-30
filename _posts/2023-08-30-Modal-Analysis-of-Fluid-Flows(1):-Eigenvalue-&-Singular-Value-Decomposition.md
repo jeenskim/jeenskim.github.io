@@ -8,7 +8,7 @@ share-img: /assets/img/path.jpg
 tags: [Theory]
 ---
 
-### This content is based on *Modal Analysis of Fluids Flows: An Overview* by Kunihiko Taira et al. [^1]. 
+### This content is based on *"Modal Analysis of Fluids Flows: An Overview"* by Kunihiko Taira et al. [^1]. 
 
 This is test
 
