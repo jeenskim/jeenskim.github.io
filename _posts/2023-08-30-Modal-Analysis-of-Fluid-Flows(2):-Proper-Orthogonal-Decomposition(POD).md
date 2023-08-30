@@ -11,12 +11,12 @@ tags: [Theory]
 
 
 1. Description
-  - Algorithm
-    - Spatial(Classical) POD method
-    - Method of snapshots
-    - SVD and POD
-  - Notes
-  - Strengths and weakness
+   - Algorithm
+     - Spatial(Classical) POD method
+     - Method of snapshots
+     - SVD and POD
+   - Notes
+   - Strengths and weakness
     
 
 
