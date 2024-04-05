@@ -12,7 +12,8 @@ tags: [Theory]
 1. Adjoint method
    - Purpose
    - Derivation
-<br>
+
+
 2. Differentiable PDE solver
    - Purpose
    - Implementation
