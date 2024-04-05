@@ -18,7 +18,7 @@ tags: [Theory]
    - Purpose
    - Implementation
    
-
+<br>
 ### 1. Adjoint method
 #### 1.1. Purpose
  The method of Lagrangian multiplier provides a way to find optimal solutions in the optimization problem with constraints. However, for complex systems like systems of PDE, it is really difficult to get the optimal solution directly from the method of Lagrangian multiplier. The Adjoint method helps to find solutions to complex optimization problems by providing a gradient of the objective function with respect to optimization variables.
