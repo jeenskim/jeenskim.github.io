@@ -52,6 +52,7 @@ And define Lagrangian $L(x, m, \lambda)$ as follows. <br/><br/>
  \frac{df}{dm} = \lambda^T\frac{\partial g}{\partial m}
  $$
 <br/><br/>
+,which can be calculated using $\lambda$ from the above equation. <br>
 
 In summary, by utilizing Lagrangian and setting the adjoint variable properly, we can compute a gradient of the objective function with regard to parameters.
 
