@@ -38,7 +38,7 @@ And define Lagrangian $L(x, m, \lambda)$ as follows. <br/><br/>
 
  Since $g(x,m)=0$, it becomes <br/><br/>
  $$
- (\frac{\partial f}{\partial x}+\lambda^T\frac{\partial g}{\partial x})\frac{dx}{dm}+\lambda^T\frac{\partial g}{\partial m}
+ \frac{df}{dm} = (\frac{\partial f}{\partial x}+\lambda^T\frac{\partial g}{\partial x})\frac{dx}{dm}+\lambda^T\frac{\partial g}{\partial m}
  $$
  <br/><br/>
 
