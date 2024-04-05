@@ -13,7 +13,7 @@ tags: [Theory]
    - Purpose
    - Derivation
 
-3. Differentiable PDE solver
+2. Differentiable PDE solver
    - Purpose
    - Implementation
    
