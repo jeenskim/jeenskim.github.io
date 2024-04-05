@@ -52,6 +52,8 @@ And define Lagrangian $L(x, m, \lambda)$ as follows. <br/><br/>
  $$
 <br/><br/>
 
+In summary, by utilizing Lagrangian and setting the adjoint variable properly, we can compute a gradient of the objective function with regard to parameters.
+
 2. Examples
 
 3. Outlook
