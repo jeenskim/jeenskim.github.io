@@ -30,10 +30,11 @@ And define Lagrangian $L(x, m, \lambda)$ as follows. <br/><br/>
  L(x, m, \lambda) = f(x, m) + \lambda^Tg(x, m) 
  $$ 
  <br>
- ,where $\lambda$ is the adjoint variable or Lagrangian multiplier.<br>
- Sicne $g(x,m) = 0$ everywhere, $f(x,m)$ is equivalent to $L(x, m, \lambda)$, and we can choose $\lambda$ freely. Also, we can think $f(x,m)$ as $f(x(m))$. <br>
- Then, $\frac{df}{dm}$ is <br>
- $$ \frac{df}{dm} = \frac{dL}{dm} = $$ <br>
+ ,where $\lambda$ is the adjoint variable or Lagrangian multiplier.<br/><br/>
+ 
+ Sicne $g(x,m) = 0$ everywhere, $f(x,m)$ is equivalent to $L(x, m, \lambda)$, and we can choose $\lambda$ freely. Also, we can think $f(x,m)$ as $f(x(m))$. <br/><br/>
+ Then, $\frac{df}{dm}$ becomes <br/><br/>
+ $$ \frac{df}{dm} = \frac{dL}{dm} = \frac{\partial f}{\partial x}\frac{dx}{dm} + \frac{d\lambda^T}{dm}g + \lambda^T(\frac{\partial g}{\partial m} + \frac{\partial g}{\partial x}\frac{dx}{dm})$$ <br/><br/>
 
 
 2. Examples
