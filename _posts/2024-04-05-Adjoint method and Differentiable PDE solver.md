@@ -40,7 +40,17 @@ And define Lagrangian $L(x, m, \lambda)$ as follows. <br/><br/>
  $$
  (\frac{\partial f}{\partial x}+\lambda^T\frac{\partial g}{\partial x})\frac{dx}{dm}+\lambda^T\frac{\partial g}{\partial m}
  $$
+ <br/><br/>
 
+ Generally, it is difficult to know $\frac{dx}{dm}. Therefore, by setting <br/><br/>
+ $$\frac{\partial f}{\partial x} + \lambda^T \frac{\partial g}{\partial x} = 0$$,<br/><br/>
+ we don't need to compute $\frac{dx}{dm}$ <br/><br/>
+ Then,
+ $$
+ \frac{df}{dm} = \lambda^T\frac{\partial g}{\partial m}
+ 
+ $$
+<br/><br/>
 
 2. Examples
 
