@@ -51,7 +51,6 @@ And define Lagrangian $L(x, m, \lambda)$ as follows. <br/><br/>
  Then,
  $$
  \frac{df}{dm} = \lambda^T\frac{\partial g}{\partial m}
- 
  $$
 <br/><br/>
 
