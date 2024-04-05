@@ -10,13 +10,13 @@ tags: [Theory]
 #### This content is based on *"Differentiable Turbulence II"* by Varun Shankar et al. [^1]. 
 
 1. Adjoint method
-   1.1. Purpose
-   1.2. Derivation
+   - Purpose
+   - Derivation
 
-2. Differentiable PDE solver
-   2.1. Purpose
-   2.2. Implementation
-
+3. Differentiable PDE solver
+   - Purpose
+   - Implementation
+   
 
 ###1. Adjoint method
 ##1.1. Purpose
