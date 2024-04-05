@@ -15,10 +15,9 @@ My research interest includes scientific machine learning to accelerate simulati
 
 #### Education
 
+Ph.D., Informatics, Penn State University, 2024.08 - present <br>
 M.S., Aerospace Engineering, Seoul National University, 2021.03 - 2023.02 <br>
 B.S., Aerospace Engineering, Seoul National University, 2015.03 - 2021.02 <br>
 (Served military service in Special Warfare School of ROK Army Special Force, 2016.03 - 2017.12)
 
-#### Experience
 
-Research Assistant, Aerospace Vehicle Design Laboratory, Seoul National University, 2023.03 ~ present.
