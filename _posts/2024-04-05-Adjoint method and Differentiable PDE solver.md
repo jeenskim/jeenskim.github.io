@@ -18,8 +18,8 @@ tags: [Theory]
    - Implementation
    
 
-###1. Adjoint method
-##1.1. Purpose
+### 1. Adjoint method
+## 1.1. Purpose
 
 
 
