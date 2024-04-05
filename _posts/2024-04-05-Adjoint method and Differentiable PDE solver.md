@@ -24,7 +24,11 @@ tags: [Theory]
    $test$
 
 #### 1.2. Derivation
- Let's say we have the objective function $f(**x**, **m**)$ and constraint $g(**x**, **m**)$, where **x** is the state variable and **m** is the optimization variable.
+ Let's say we have the objective function 
+ $f(**x**, **m**)$ 
+ and constraint 
+ $g(**x**, **m**)$
+ , where **x** is the state variable and **m** is the optimization variable.
  And define Lagrangian $L(**x**, **m**, \lambda)$ as following.
  $$L(**x**, **m**, \lambda) = f(**x**, **m**) + \lambda^Tg(**x**, **m**) $$
  ,where $\lambda$ is the adjoint variable or Lagrangian multiplier.
