@@ -8,10 +8,10 @@ subtitle: Thanks for coming to my Webpage.
 
 Hi, my name is Hojin Kim. <br>
 I'm a PhD student at the College of Information Science and Technology at Penn State University.
-I joined [ISCL(Interdisciplinary Scientific Computing Laboratory)](https://romit-maulik.github.io/index.html), and my academic advisor is [Prof. Romit Maulik](https://romit-maulik.github.io/Members.html).
-I am a research assistant at the Department of Aerospace Engineering, Seoul National University, South Korea <br>
+I joined [ISCL(Interdisciplinary Scientific Computing Laboratory)](https://romit-maulik.github.io/index.html), and my academic advisor is [Prof. Romit Maulik](https://romit-maulik.github.io/Members.html). <br>
+
 <br>
-My research interests are **computational fluid mechanics(CFD), machine learning**, rotorcraft, and aeroacoustics.<br>
+My research interest includes scientific machine learning to accelerate simulations and enhance accuracy, especially for **computational fluid mechanics(CFD).<br>
 
 #### Education
 
