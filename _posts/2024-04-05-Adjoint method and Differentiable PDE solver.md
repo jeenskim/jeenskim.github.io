@@ -36,6 +36,11 @@ And define Lagrangian $L(x, m, \lambda)$ as follows. <br/><br/>
  Then, $\frac{df}{dm}$ becomes <br/><br/>
  $$ \frac{df}{dm} = \frac{dL}{dm} = \frac{\partial f}{\partial x}\frac{dx}{dm} + \frac{d\lambda^T}{dm}g + \lambda^T(\frac{\partial g}{\partial m} + \frac{\partial g}{\partial x}\frac{dx}{dm})$$ <br/><br/>
 
+ Since $g(x,m)=0$, it becomes <br/><br/>
+ $$
+ (\frac{\partial f}{\partial x}+\lambda^T\frac{\partial g}{\partial x})\frac{dx}{dm}+\lambda^T\frac{\partial g}{\partial m}
+ $$
+
 
 2. Examples
 
