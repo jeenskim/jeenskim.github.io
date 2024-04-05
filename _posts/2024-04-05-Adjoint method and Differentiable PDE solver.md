@@ -24,9 +24,12 @@ tags: [Theory]
    $test$
 
 #### 1.2. Derivation
-&nbsp; Let's say we have the objective function $f(x, m)$ and constraint $g(x, m)$, where **x** is the state variable and **m** is the optimization variable. Our goal is to calculate the total derivative of the objective function with respect to the optimization variable, $\frac{df}{dm}$ <br>
+&nbsp; Let's say we have the objective function $f(x, m)$ and constraint $g(x, m)$, where **x** is the state variable, and **m** is the optimization variable. Our goal is to calculate the total derivative of the objective function with respect to the optimization variable, $\frac{df}{dm}$ <br>
 And define Lagrangian $L(x, m, \lambda)$ as follows. <br>
- $$L(x, m, \lambda) = f(x, m) + \lambda^Tg(x, m) $$ <br>
+ $$
+ L(x, m, \lambda) = f(x, m) + \lambda^Tg(x, m) 
+ $$ 
+ <br>
  ,where $\lambda$ is the adjoint variable or Lagrangian multiplier.<br>
  Sicne $g(x,m) = 0 everywhere, $f(x,m)$ is equivalent to $L(x, m, \lambda)$, and we can choose $\lambda$ freely. Also, we can think $f(x,m)$ as $f(x(m))$. <br>
  Then, $\frac{df}{dm}$ is <br>
