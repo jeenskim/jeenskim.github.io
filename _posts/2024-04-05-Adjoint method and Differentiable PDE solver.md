@@ -25,7 +25,7 @@ tags: [Theory]
 
 #### 1.2. Derivation
  Let's say we have the objective function 
- $f(**x**, **m**)$ 
+ $f(x, m)$ 
  and constraint 
  $g(**x**, **m**)$
  , where **x** is the state variable and **m** is the optimization variable.
