@@ -39,6 +39,13 @@ layout: base
         </div>
       {% endif %}
 
+      <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+      </script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/math...">
+      </script>
+
+
       <article role="main" class="blog-post">
         {{ content }}
       </article>
