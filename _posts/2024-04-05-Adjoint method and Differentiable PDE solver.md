@@ -8,7 +8,6 @@ tags: [Theory]
 ---
 
 #### This content is based on *"Differentiable Turbulence II"* by Varun Shankar et al. [^1]. 
-<br>
 
 1. Adjoint method
    - Purpose
