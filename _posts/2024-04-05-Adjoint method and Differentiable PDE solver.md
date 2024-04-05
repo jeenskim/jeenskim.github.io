@@ -30,7 +30,7 @@ And define Lagrangian $L(x, m, \lambda)$ as follows. <br>
  ,where $\lambda$ is the adjoint variable or Lagrangian multiplier.<br>
  Sicne $g(x,m) = 0 everywhere, $f(x,m)$ is equivalent to $L(x, m, \lambda)$, and we can choose $\lambda$ freely. Also, we can think $f(x,m)$ as $f(x(m))$. <br>
  Then, $\frac{df}{dm}$ is <br>
- $$ \frac{df}{dm} = \frac{dL}{dm} = $$
+ $$ \frac{df}{dm} = \frac{dL}{dm} = $$ <br>
 
 
 2. Examples
