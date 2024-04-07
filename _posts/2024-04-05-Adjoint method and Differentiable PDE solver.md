@@ -68,5 +68,5 @@ In summary, by utilizing Lagrangian and setting the adjoint variable properly, w
 
 
 
-[^1]: [Shankar, Varun, Romit Maulik, and Venkatasubramanian Viswanathan. "Differentiable Turbulence II." arXiv preprint arXiv:2307.13533 (2023).](https://doi.org/10.48550/arXiv.2307.13533) 
+[^1]: [Varun Shankar, Romit Maulik, and Venkatasubramanian Viswanathan. "Differentiable Turbulence II." arXiv preprint arXiv:2307.13533 (2023).](https://doi.org/10.48550/arXiv.2307.13533) 
 
