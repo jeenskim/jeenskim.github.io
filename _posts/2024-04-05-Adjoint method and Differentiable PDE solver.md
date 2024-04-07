@@ -58,8 +58,9 @@ In summary, by utilizing Lagrangian and setting the adjoint variable properly, w
 
 ### 2. Differentiable PDE solver
 #### 2.1. Purpose
-&nbsp; Turbulence modeling with machine learning techniques usually has taken _a-priori_ learning. While _a-priori_ approach in modeling turbulence is easy to implement, it can't guarantee accurate prediction for unseen data. This is because when a learned model is embedded into the PDE solver, numerical artifacts, such as numerical errors and temporal errors, are produced by the PDE solver. These artifacts are not included in the training process, thus deteriorating prediction capability for unseen data. <br>
-&nbsp;
+&nbsp; Turbulence modeling with machine learning techniques usually has taken _a-priori_ learning. While _a-priori_ approach in modeling turbulence is easy to implement, it can't guarantee accurate prediction for unseen data. This is because when a learned model is embedded into the PDE solver, numerical artifacts, such as numerical errors and temporal errors, are produced by the PDE solver. These artifacts are not included in the training process, thus deteriorating prediction capability for unseen data. <be>
+
+&nbsp: However, differentiable PDE solver enables end-to-end training of machine learning models with backpropagation, enhancing _a-posteriori_ prediction capability. differentiable PDE solver can be realized by implementing a governing equation in an auto-differentiation (AD) framework.
 
 #### 2.2. Implementation
 
