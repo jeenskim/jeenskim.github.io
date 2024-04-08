@@ -66,13 +66,13 @@ In summary, by utilizing Lagrangian and setting the adjoint variable properly, w
 &nbsp; The AD framework's basic principle is that gradients of a composition of differentiable functions can be exactly computed using the chain rule. Deep neural networks are composed of straightforward operations, such as linear or pointwise nonlinear operations. Therefore, gradients can be easily computed in the training of deep neural networks using the AD framework. However, writing a PDE solver in an AD-enabled way can add enormous complexity, which makes it impractical. Instead, by implementing a vector-jacobian product using the discrete adjoint method, we can integrate a PDE solver within the AD framework.
 
 &nbsp; The basic chain rule is as follows. <br>
-$x~1=f~0(x~0)$ <br>
-$x~2=f~0(x~1)$ <br>
+$x_1=f_0(x_0)$ <br>
+$x_2=f_0(x_1)$ <br>
 .<br>
 .<br>
 .<br>
-$y=f~n(x~n)$ <br>
-$\frac{dy}{dx~i}=\frac{dy}{dx~i+1}\frac{dx~i+1}{dx~i}=\frac{dy}{dx~i+1}\frac{df~i(x~i)}{dx~i}.  <br>
+$y=f_n(x_n)$ <br>
+$\frac{dy}{dx_i}=\frac{dy}{dx_i+1}\frac{dx_i+1}{dx_i}=\frac{dy}{dx_i+1}\frac{df_i(x_i)}{dx_i}.  <br>
 
 
 
