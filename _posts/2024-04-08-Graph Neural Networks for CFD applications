@@ -26,6 +26,7 @@ $a_v^{(k)} = AGGREGATE^{(k)}({h_u^{(k-1)} : u \in N(v)})$,   $h_v^{(k)} = COMBIN
 where $h_v^{(k)}$ is the feature vector of node $v$ at the $k$-th iteration/layer.
 We initialize $h_v^{(0)}=X_v,$ and $N(v)$ is a set of nodes adjacent to $v$. 
 The choice of $AGGREGATE^{(k)}$ and COMBINE^{(k)} in GNN is crucial.
+A number of architectures for $AGGREGATE$ have been proposed.
 
 The method of Lagrangian multiplier provides a way to find optimal solutions in the optimization problem with constraints. However, for complex systems like systems of PDE, it is really difficult to get the optimal solution directly from the method of Lagrangian multiplier. The Adjoint method helps to find solutions to complex optimization problems by providing a gradient of the objective function with respect to optimization variables.
    
