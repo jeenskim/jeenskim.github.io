@@ -26,10 +26,15 @@ $a_v^{(k)} = AGGREGATE^{(k)}({h_u^{(k-1)} : u \in N(v)})$,   $h_v^{(k)} = COMBIN
 where $h_v^{(k)}$ is the feature vector of node $v$ at the $k$-th iteration/layer.
 We initialize $h_v^{(0)}=X_v,$ and $N(v)$ is a set of nodes adjacent to $v$. 
 The choice of $AGGREGATE^{(k)}$ and COMBINE^{(k)} in GNN is crucial.
-A number of architectures for $AGGREGATE$ and $COMBINE$ have been proposed.  <br/><br/>
+A number of architectures for $AGGREGATE$ and $COMBINE$ have been proposed.  
+GNNs are capable of combining the scalability of backpropagation-based optimization with flexible data representations.
+Due to their generalizability and ambiguity in graph representations of data, they have increasing usage in most modeling tasks.
+As long as a problem or dataset can be described as a set of nodes and edges, GNNs show their overall strength in modeling problems. <br/><br/>
+
 
 #### 1.2. Applications
-The method of Lagrangian multiplier provides a way to find optimal solutions in the optimization problem with constraints. However, for complex systems like systems of PDE, it is really difficult to get the optimal solution directly from the method of Lagrangian multiplier. The Adjoint method helps to find solutions to complex optimization problems by providing a gradient of the objective function with respect to optimization variables.
+&nbsp; Image classification, object detection, and node classification tasks. Additionally, modeling protein folding, predicting the emergent properties of social networks and modeling differential equations.
+
    
 
 #### 1.2. Derivation
@@ -66,13 +71,13 @@ And define Lagrangian $L(x, m, \lambda)$ as follows. <br/><br/>
 
 In summary, by utilizing Lagrangian and setting the adjoint variable properly, we can compute a gradient of the objective function with regard to parameters.
 
-### 2. Differentiable PDE solver
+### 2. GNN for CFD applications
 #### 2.1. Purpose
 &nbsp; Turbulence modeling with machine learning techniques usually has taken _a-priori_ learning. While _a-priori_ approach in modeling turbulence is easy to implement, it can't guarantee accurate prediction for unseen data. This is because when a learned model is embedded into the PDE solver, numerical artifacts, such as numerical errors and temporal errors, are produced by the PDE solver. These artifacts are not included in the training process, thus deteriorating prediction capability for unseen data.
 
 &nbsp; However, differentiable PDE solver enables end-to-end training of machine learning models with backpropagation, enhancing _a-posteriori_ prediction capability. A differentiable PDE solver can be realized by implementing a governing equation in an automatic differentiation (AD) framework, which is a necessary tool for training deep neural networks. <br>
 
-#### 2.2. Implementation with the adjoint method
+#### 2.2. Examples
 &nbsp; The AD framework's basic principle is that gradients of a composition of differentiable functions can be exactly computed using the chain rule. Deep neural networks are composed of straightforward operations, such as linear or pointwise nonlinear operations. Therefore, gradients can be easily computed in the training of deep neural networks using the AD framework. However, writing a PDE solver in an AD-enabled way can add enormous complexity, which makes it impractical. Instead, by implementing a vector-jacobian product using the discrete adjoint method, we can integrate a PDE solver within the AD framework.
 
 &nbsp; The basic chain rule is as follows. <br>
