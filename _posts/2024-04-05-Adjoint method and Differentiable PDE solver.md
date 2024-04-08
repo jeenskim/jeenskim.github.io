@@ -83,7 +83,7 @@ $\frac{dy}{dx_i}=f_i^'(\frac{dy}{dx_i+1},x_i). <br>
 &nbsp; Let's take an example of solving the Navier-Stokes equation using an implicit pressure correction scheme (IPCS). The overall flow of this algorithm is as follows: <br>
 
 
-
+![algorithm 1](./
 
 
 
