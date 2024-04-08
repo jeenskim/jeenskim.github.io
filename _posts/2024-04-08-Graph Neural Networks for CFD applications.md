@@ -24,7 +24,7 @@ Formally, the $k$-th layer of a GNN is as follows:  <br/><br/>
 $a_v^{(k)} = AGGREGATE^{(k)}({h_u^{(k-1)} : u \in N(v)})$,   $h_v^{(k)} = COMBINE^{(k)}(h_v^{(k-1)}, a_v^{(k)}),$ <br/><br/>
 where $h_v^{(k)}$ is the feature vector of node $v$ at the $k$-th iteration/layer.
 We initialize $h_v^{(0)}=X_v,$ and $N(v)$ is a set of nodes adjacent to $v$. 
-The choice of $AGGREGATE^{(k)}$ and COMBINE^{(k)} in GNN is crucial.
+The choice of $AGGREGATE^{(k)}$ and $COMBINE^{(k)}$ in GNN is crucial.
 A number of architectures for $AGGREGATE$ and $COMBINE$ have been proposed.  
 GNNs are capable of combining the scalability of backpropagation-based optimization with flexible data representations.
 Due to their generalizability and ambiguity in graph representations of data, they have increasing usage in most modeling tasks.
