@@ -74,7 +74,7 @@ $x_2=f_0(x_1)$ <br>
 $y=f_n(x_n)$ <br/><br/>
 $\frac{dy}{dx_i}=\frac{dy}{dx_i+1}\frac{dx_i+1}{dx_i}=\frac{dy}{dx_i+1}\frac{df_i(x_i)}{dx_i}$.  <br/><br/>
 
-&nbsp;The iterative nature of the chain rule allows gradients of $y$ to be propagated backward starting from $\frac{dy}{dx_n}$. To enable backpropagation, the reverse function should be implemented in each forward operation. This reverse function is called as vector-jacobian product (VJP): <br>
+&nbsp;The iterative nature of the chain rule allows gradients of $y$ to be propagated backward starting from $\frac{dy}{dx_n}$. To enable backpropagation, the reverse function should be implemented in each forward operation. This reverse function is called a vector-jacobian product (VJP): <br>
 
 $\frac{dy}{dx_i}=f_i^'(\frac{dy}{dx_i+1},x_i). <br>
 
@@ -84,6 +84,22 @@ $\frac{dy}{dx_i}=f_i^'(\frac{dy}{dx_i+1},x_i). <br>
 
 
 ![algorithm 1](/assets/img/IPCS_Algorithm1.png)
+
+&nbsp;In this algorithm, the GNN model is included to predict turbulence model parameters. And since the GNN model is written in the AD framework, no further work is required to enable gradient backpropagation. However, for the next three functions, *tentative_vel, pres_correct, vel_correct*, which are external routines and not known by the AD framework, a custom VJP for each of the PDE solution steps should be implemented.<br>
+
+&nbsp; The PDE solver can be written generally as follows:
+$x=PDE_solve(m),$ <br>
+where x is state variables, such as pressure and velocity, and m is learnable model parameters. <br>
+Here we should implement a custom VJP:<br>
+$y_m=PDE_solve_vjp(y_x,m),$ <br>
+where subscript represents partial differentiation. The forward PDE-solving operations can be simplified into solving the linear system: <br>
+$A(m)x=b(m),$ <br>
+where A and b represent the discretized left hand side (LHS) and right hand side (RHS) of the PDE respectively. With this description, we can implement *PDE_solve_vjp* using the discrete adjoint method. Using the discrete adjoint method, the total derivative of y can be calculated as follows:<br>
+$\frac{dy}{dm}=-\lambda^T(A_mx-b_m),$<br>
+where \lambda is the solution to the adjoint equation given by<br>
+$A^T\lambda=y_x^T.$ <br>
+The overall procedure for solving PDE and calculating custom VJP is shown below: <br>
+![algorithm 1](/assets/img/Algorithm2.png)
 
 
 
