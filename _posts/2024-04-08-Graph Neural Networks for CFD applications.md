@@ -7,8 +7,7 @@ share-img: /assets/img/DT-II.png
 tags: [Theory]
 ---
 
-#### This content is based on *"Multiscale graph neural networks autoencoders for interpretable scientific machine learning"* by Shivam Barwey et al. [^1]. 
-*"How powerful are Graph Neural Networks?"* by Keyulu Xu et al.[^2}
+#### This content is based on *"Multiscale graph neural networks autoencoders for interpretable scientific machine learning"* by Shivam Barwey et al. [^1] and *"How powerful are Graph Neural Networks?"* by Keyulu Xu et al.[^2]
 1. Graph Neural Networks 
    - Definition
    - Applications<br>
