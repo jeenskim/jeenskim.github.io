@@ -74,11 +74,14 @@ $x_2=f_0(x_1)$ <br>
 $y=f_n(x_n)$ <br/><br/>
 $\frac{dy}{dx_i}=\frac{dy}{dx_i+1}\frac{dx_i+1}{dx_i}=\frac{dy}{dx_i+1}\frac{df_i(x_i)}{dx_i}$.  <br/><br/>
 
-The iterative nature of the chain rule allows gradients of $y$ to be propagated backward starting from $\frac{dy}{dx_n}$. To enable backpropagation, the reverse function should be implemented in each forward operation. This reverse function is called as vector-jacobian product (VJP): <br>
+&nbsp;The iterative nature of the chain rule allows gradients of $y$ to be propagated backward starting from $\frac{dy}{dx_n}$. To enable backpropagation, the reverse function should be implemented in each forward operation. This reverse function is called as vector-jacobian product (VJP): <br>
 
 $\frac{dy}{dx_i}=f_i^'(\frac{dy}{dx_i+1},x_i). <br>
 
-In the AD framework, VJPs are provided easily for the majority of functions, e.g., addition and multiplication. However, if the function $f_i$ represents an external routine not known by the AD framework, such as a PDE solver, a custom VJP should be implemented.
+&nbsp; In the AD framework, VJPs are provided easily for the majority of functions, e.g., addition and multiplication. However, if the function $f_i$ represents an external routine not known by the AD framework, such as a PDE solver, a custom VJP should be implemented. <br>
+
+&nbsp; Let's take an example of solving the Navier-Stokes equation using an implicit pressure correction scheme (IPCS). The overall flow of this algorithm is as follows: <br>
+
 
 
 
