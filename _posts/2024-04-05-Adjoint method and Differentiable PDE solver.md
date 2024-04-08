@@ -71,7 +71,7 @@ $x_2=f_0(x_1)$ <br>
 .<br>
 .<br>
 .<br>
-$y=f_n(x_n)$ <br>
+$y=f_n(x_n)$ <br/><br/>
 $\frac{dy}{dx_i}=\frac{dy}{dx_i+1}\frac{dx_i+1}{dx_i}=\frac{dy}{dx_i+1}\frac{df_i(x_i)}{dx_i}$.  <br/><br/>
 
 The iterative nature of the chain rule allows gradients of $y$ to be propagated backward starting from $\frac{dy}{dx_n}$. To enable backpropagation, the reverse function should be implemented in each forward operation. This reverse function is called as vector-jacobian product (VJP): <br>
