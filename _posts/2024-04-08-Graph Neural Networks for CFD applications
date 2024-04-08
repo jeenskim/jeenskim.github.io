@@ -8,7 +8,7 @@ tags: [Theory]
 ---
 
 #### This content is based on *"Multiscale graph neural networks autoencoders for interpretable scientific machine learning"* by Shivam Barwey et al. [^1]. 
-
+*"How powerful are Graph Neural Networks?"* by Keyulu Xu et al.[^2}
 1. Graph Neural Networks 
    - Definition
    - Applications<br>
@@ -17,9 +17,17 @@ tags: [Theory]
    - Examples
    
 <br>
-### 1. Adjoint method
-#### 1.1. Purpose
-&nbsp; The method of Lagrangian multiplier provides a way to find optimal solutions in the optimization problem with constraints. However, for complex systems like systems of PDE, it is really difficult to get the optimal solution directly from the method of Lagrangian multiplier. The Adjoint method helps to find solutions to complex optimization problems by providing a gradient of the objective function with respect to optimization variables.
+### 1. Graph Neural Networks (GNNs)
+#### 1.1. Definition
+&nbsp; GNNs use the graph structure and node features $X_v$ to learn a representation vector of a node, $h_v$, or the entire graph, $h_G$. Modern GNNs follow a neighborhood aggregation strategy, where we iteratively update the representation of a node by aggregating representations of its neighbors. 
+After $k$ iterations of aggregation, a node's representation captures the structural information within its k-hop network neighborhood.
+Formally, the $k$-th layer of a GNN is as follows:
+$a_v^{(k)} = AGGREGATE^{(k)}({h_u^{(k-1)} : u \in N(v)})$,   $h_v^{(k)} = COMBINE^{(k)}(h_v^{(k-1)}, a_v^{(k)}),$ <br>
+where $h_v^{(k)}$ is the feature vector of node $v$ at the $k$-th iteration/layer.
+We initialize $h_v^{(0)}=X_v,$ and $N(v)$ is a set of nodes adjacent to $v$. 
+The choice of $AGGREGATE^{(k)}$ and COMBINE^{(k)} in GNN is crucial.
+
+The method of Lagrangian multiplier provides a way to find optimal solutions in the optimization problem with constraints. However, for complex systems like systems of PDE, it is really difficult to get the optimal solution directly from the method of Lagrangian multiplier. The Adjoint method helps to find solutions to complex optimization problems by providing a gradient of the objective function with respect to optimization variables.
    
 
 #### 1.2. Derivation
@@ -105,4 +113,4 @@ The overall procedure for solving PDE and calculating custom VJP is shown below:
 
 
 [^1]: [Barwey, Shivam, et al. "Multiscale graph neural network autoencoders for interpretable scientific machine learning." Journal of Computational Physics 495 (2023): 112537.](https://doi.org/10.1016/j.jcp.2023.112537) 
-
+[^2]: [Xu, Keyulu, et al. "How powerful are graph neural networks?." arXiv preprint arXiv:1810.00826 (2018).](https://doi.org/10.48550/arXiv.1810.00826)
