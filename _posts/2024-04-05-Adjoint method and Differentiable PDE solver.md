@@ -72,7 +72,7 @@ $x_2=f_0(x_1)$ <br>
 .<br>
 .<br>
 $y=f_n(x_n)$ <br>
-$\frac{dy}{dx_i}=\frac{dy}{dx_i+1}\frac{dx_i+1}{dx_i}=\frac{dy}{dx_i+1}\frac{df_i(x_i)}{dx_i}.  <br>
+$\frac{dy}{dx_i}=\frac{dy}{dx_i+1}\frac{dx_i+1}{dx_i}=\frac{dy}{dx_i+1}\frac{df_i(x_i)}{dx_i}$.  <br>
 
 
 
