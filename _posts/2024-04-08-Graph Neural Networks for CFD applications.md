@@ -20,8 +20,8 @@ tags: [Theory]
 #### 1.1. Definition
 &nbsp; GNNs use the graph structure and node features $X_v$ to learn a representation vector of a node, $h_v$, or the entire graph, $h_G$. Modern GNNs follow a neighborhood aggregation strategy, where we iteratively update the representation of a node by aggregating representations of its neighbors. 
 After $k$ iterations of aggregation, a node's representation captures the structural information within its k-hop network neighborhood.
-Formally, the $k$-th layer of a GNN is as follows:
-$a_v^{(k)} = AGGREGATE^{(k)}({h_u^{(k-1)} : u \in N(v)})$,   $h_v^{(k)} = COMBINE^{(k)}(h_v^{(k-1)}, a_v^{(k)}),$ <br>
+Formally, the $k$-th layer of a GNN is as follows:  <br/><br/>
+$a_v^{(k)} = AGGREGATE^{(k)}({h_u^{(k-1)} : u \in N(v)})$,   $h_v^{(k)} = COMBINE^{(k)}(h_v^{(k-1)}, a_v^{(k)}),$ <br/><br/>
 where $h_v^{(k)}$ is the feature vector of node $v$ at the $k$-th iteration/layer.
 We initialize $h_v^{(0)}=X_v,$ and $N(v)$ is a set of nodes adjacent to $v$. 
 The choice of $AGGREGATE^{(k)}$ and COMBINE^{(k)} in GNN is crucial.
