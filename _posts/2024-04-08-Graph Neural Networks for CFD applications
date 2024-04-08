@@ -9,12 +9,12 @@ tags: [Theory]
 
 #### This content is based on *"Multiscale graph neural networks autoencoders for interpretable scientific machine learning"* by Shivam Barwey et al. [^1]. 
 
-1. Adjoint method
+1. Graph Neural Networks 
+   - Definition
+   - Applications<br>
+2. GNN for CFD applications
    - Purpose
-   - Derivation<br>
-2. Differentiable PDE solver
-   - Purpose
-   - Implementation
+   - Examples
    
 <br>
 ### 1. Adjoint method
