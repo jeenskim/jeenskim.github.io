@@ -2,8 +2,8 @@
 layout: post
 title: Adjoint method and Differentiable PDE solver
 cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/POD_thumb.png
-share-img: /assets/img/POD_thumb.png
+thumbnail-img: /assets/img/DT-II.png
+share-img: /assets/img/DT-II.png
 tags: [Theory]
 ---
 
