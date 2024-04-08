@@ -46,7 +46,7 @@ And define Lagrangian $L(x, m, \lambda)$ as follows. <br/><br/>
  \frac{\partial f}{\partial x} + \lambda^T \frac{\partial g}{\partial x} = 0
  $$
  <br/><br/>
- we don't need to compute $\frac{dx}{dm}$ <br/><br/>
+ we don't need to compute $\frac{dx}{dm}$. <br/><br/>
  Then,
  $$
  \frac{df}{dm} = \lambda^T\frac{\partial g}{\partial m}
@@ -58,12 +58,24 @@ In summary, by utilizing Lagrangian and setting the adjoint variable properly, w
 
 ### 2. Differentiable PDE solver
 #### 2.1. Purpose
-&nbsp; Turbulence modeling with machine learning techniques usually has taken _a-priori_ learning. While _a-priori_ approach in modeling turbulence is easy to implement, it can't guarantee accurate prediction for unseen data. This is because when a learned model is embedded into the PDE solver, numerical artifacts, such as numerical errors and temporal errors, are produced by the PDE solver. These artifacts are not included in the training process, thus deteriorating prediction capability for unseen data. <br>
+&nbsp; Turbulence modeling with machine learning techniques usually has taken _a-priori_ learning. While _a-priori_ approach in modeling turbulence is easy to implement, it can't guarantee accurate prediction for unseen data. This is because when a learned model is embedded into the PDE solver, numerical artifacts, such as numerical errors and temporal errors, are produced by the PDE solver. These artifacts are not included in the training process, thus deteriorating prediction capability for unseen data.
 
 &nbsp; However, differentiable PDE solver enables end-to-end training of machine learning models with backpropagation, enhancing _a-posteriori_ prediction capability. A differentiable PDE solver can be realized by implementing a governing equation in an automatic differentiation (AD) framework, which is a necessary tool for training deep neural networks. <br>
 
 #### 2.2. Implementation with the adjoint method
 &nbsp; The AD framework's basic principle is that gradients of a composition of differentiable functions can be exactly computed using the chain rule. Deep neural networks are composed of straightforward operations, such as linear or pointwise nonlinear operations. Therefore, gradients can be easily computed in the training of deep neural networks using the AD framework. However, writing a PDE solver in an AD-enabled way can add enormous complexity, which makes it impractical. Instead, by implementing a vector-jacobian product using the discrete adjoint method, we can integrate a PDE solver within the AD framework.
+
+&nbsp; The basic chain rule is as follows. <br>
+$x~1=f~0(x~0)$ <br>
+$x~2=f~0(x~1)$ <br>
+.<br>
+.<br>
+.<br>
+$y=f~n(x~n)$ <br>
+$\frac{dy}{dx~i}=\frac{dy}{dx~i+1}\frac{dx~i+1}{dx~i}=\frac{dy}{dx~i+1}\frac{df~i(x~i)}{dx~i}.  <br>
+
+
+
 
 
 
