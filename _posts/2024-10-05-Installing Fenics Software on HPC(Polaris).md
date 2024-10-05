@@ -43,6 +43,12 @@ module load cmake
 export MPICH_GPU_SUPPORT_ENABLED=0
 ```
 
+### 2. Pytorch & torch-related libraries
+#### Install PyTorch, other torch-related libraries, torch_geometric
+Install torch, torchvision and torch audio
+
+`pip install --user --force-reinstall --no-cache-dir torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113`
+
 
 &nbsp; GNNs use the graph structure and node features $X_v$ to learn a representation vector of a node, $h_v$, or the entire graph, $h_G$. Modern GNNs follow a neighborhood aggregation strategy, where we iteratively update the representation of a node by aggregating representations of its neighbors. 
 After $k$ iterations of aggregation, a node's representation captures the structural information within its k-hop network neighborhood.
