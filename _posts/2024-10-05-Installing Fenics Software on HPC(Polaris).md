@@ -20,7 +20,7 @@ tags: [HPC]
 <br>
 ### 1. Basic settings
 #### 1.1. Proxy settings on Polaris
-This enables for node to get access to external website (pip, wand, etc)
+This enables for node to get access to external website (pip, wandb, etc)
 
 ```
 # proxy settings
