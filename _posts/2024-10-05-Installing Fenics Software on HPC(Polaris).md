@@ -22,7 +22,7 @@ tags: [HPC]
 #### 1.1. Proxy settings on Polaris
 This enables for node to get access to external website (pip, wand, etc)
 
-'''
+```
 # proxy settings
 export HTTP_PROXY="http://proxy.alcf.anl.gov:3128"
 export HTTPS_PROXY="http://proxy.alcf.anl.gov:3128"
@@ -30,7 +30,7 @@ export http_proxy="http://proxy.alcf.anl.gov:3128"
 export https_proxy="http://proxy.alcf.anl.gov:3128"
 export ftp_proxy="http://proxy.alcf.anl.gov:3128"
 export no_proxy="admin,polaris-adminvm-01,localhost,*.cm.polaris.alcf.anl.gov,polaris-*,*.polaris.alcf.anl.gov,*.alcf.anl.gov"
-'''
+```
 
 &nbsp; GNNs use the graph structure and node features $X_v$ to learn a representation vector of a node, $h_v$, or the entire graph, $h_G$. Modern GNNs follow a neighborhood aggregation strategy, where we iteratively update the representation of a node by aggregating representations of its neighbors. 
 After $k$ iterations of aggregation, a node's representation captures the structural information within its k-hop network neighborhood.
