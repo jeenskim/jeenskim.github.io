@@ -7,8 +7,8 @@ share-img: /assets/img/HPC.png
 tags: [HPC]
 ---
 
-##### The thumbnail image is created by chatGPT-4o
-#### This content explains how to install the Finite element method (FEM) based open-source software Fenics from source code on HPC environment. Especially, we are going to focus on how to install Fenics on Polaris.
+###### The thumbnail image is created by chatGPT-4o
+##### This content explains how to install the Finite element method (FEM) based open-source software Fenics from source code on HPC environment. Especially, we are going to focus on how to install Fenics on Polaris.
 
 
 1. Basic settings
@@ -31,6 +31,18 @@ export https_proxy="http://proxy.alcf.anl.gov:3128"
 export ftp_proxy="http://proxy.alcf.anl.gov:3128"
 export no_proxy="admin,polaris-adminvm-01,localhost,*.cm.polaris.alcf.anl.gov,polaris-*,*.polaris.alcf.anl.gov,*.alcf.anl.gov"
 ```
+
+#### 1.2. Module setup
+This initialize loaded modules and load some necessary modules
+
+```
+module restore
+module use /soft/modulefiles/
+module load jax/0.4.29-dev
+module load cmake
+export MPICH_GPU_SUPPORT_ENABLED=0
+```
+
 
 &nbsp; GNNs use the graph structure and node features $X_v$ to learn a representation vector of a node, $h_v$, or the entire graph, $h_G$. Modern GNNs follow a neighborhood aggregation strategy, where we iteratively update the representation of a node by aggregating representations of its neighbors. 
 After $k$ iterations of aggregation, a node's representation captures the structural information within its k-hop network neighborhood.
