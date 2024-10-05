@@ -2,22 +2,36 @@
 layout: post
 title: Installing Fenics Software on HPC(Polaris)
 cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/DT-II.png
-share-img: /assets/img/DT-II.png
-tags: [Theory]
+thumbnail-img: /assets/img/HPC.png
+share-img: /assets/img/HPC.png
+tags: [HPC]
 ---
 
-#### This content is based on *"Multiscale graph neural networks autoencoders for interpretable scientific machine learning"* by Shivam Barwey et al. [^1] and *"How powerful are Graph Neural Networks?"* by Keyulu Xu et al.[^2]
-1. Graph Neural Networks 
-   - Definition
-   - Applications<br>
-2. GNN for CFD applications
-   - Purpose
-   - Examples
+##### The thumbnail image is created by chatGPT-4o
+#### This content explains how to install the Finite element method (FEM) based open-source software Fenics from source code on HPC environment. Especially, we are going to focus on how to install Fenics on Polaris.
+
+
+1. Basic settings
+2. Pytorch & torch-related libraries
+3. Install Fenics
+4. Enjoy
+
    
 <br>
-### 1. Graph Neural Networks (GNNs)
-#### 1.1. Definition
+### 1. Basic settings
+#### 1.1. Proxy settings on Polaris
+This enables for node to get access to external website (pip, wand, etc)
+
+'''
+# proxy settings
+export HTTP_PROXY="http://proxy.alcf.anl.gov:3128"
+export HTTPS_PROXY="http://proxy.alcf.anl.gov:3128"
+export http_proxy="http://proxy.alcf.anl.gov:3128"
+export https_proxy="http://proxy.alcf.anl.gov:3128"
+export ftp_proxy="http://proxy.alcf.anl.gov:3128"
+export no_proxy="admin,polaris-adminvm-01,localhost,*.cm.polaris.alcf.anl.gov,polaris-*,*.polaris.alcf.anl.gov,*.alcf.anl.gov"
+'''
+
 &nbsp; GNNs use the graph structure and node features $X_v$ to learn a representation vector of a node, $h_v$, or the entire graph, $h_G$. Modern GNNs follow a neighborhood aggregation strategy, where we iteratively update the representation of a node by aggregating representations of its neighbors. 
 After $k$ iterations of aggregation, a node's representation captures the structural information within its k-hop network neighborhood.
 Formally, the $k$-th layer of a GNN is as follows:  <br/><br/>
