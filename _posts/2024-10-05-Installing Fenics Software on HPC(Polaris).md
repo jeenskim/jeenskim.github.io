@@ -44,10 +44,92 @@ export MPICH_GPU_SUPPORT_ENABLED=0
 ```
 
 ### 2. Pytorch & torch-related libraries
-#### Install PyTorch, other torch-related libraries, torch_geometric
+#### 2.1. Install PyTorch, other torch-related libraries, torch_geometric
 Install torch, torchvision and torch audio
 
-`pip install --user --force-reinstall --no-cache-dir torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113`
+```
+pip install --user --force-reinstall --no-cache-dir torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113
+```
+
+Install pyg_lib, torch_scatter, torch_sparse, torch_cluster, torch_spline_conv
+```
+pip install --user --force-reinstall --no-cache-dir pyg_lib==0.4.0+pt112cu113 torch_scatter==2.1.0+pt112cu113 torch_sparse==0.6.16+pt112cu113 torch_cluster==1.6.0+pt112cu113 torch_spline_conv==1.2.1+pt112cu113 -f https://data.pyg.org/whl/torch-1.12.1+cu113.html
+```
+
+Install torch_geometric
+```
+pip install --user torch_geometric
+```
+
+#### 2.2. Install functorch(https://pytorch.org/functorch/versions.html)
+This enables the use of additional torch function (e.g. functorch.vmap)
+```
+pip install --user functorch==0.2.1 
+```
+
+#### 2.3. Change in train.py (Ignore this if already changed)
+torch.concatenate -> torch.cat
+torch.vmap -> functorch.vmap
+
+#### 2.4. Install mpi4torch
+This enables MPI calculation for torch.tensor
+```
+pip install --user mpi4torch --no-build-isolation
+```
+
+### 3. Install Fenics
+- Installing Fenics is composed of three big steps
+    * Install necessary and optional packages required by Fenics
+    * Compilation of dolfin source code with those pre-installed packages
+    * Installation of dolfin packages
+
+- Pre-installed necessary and optional packages required by Fenics
+    * Necessary packages
+        * Pybind11
+        * Eigen3
+        * Boost
+    * Optional packages
+        * PETSc
+        * SLEPc
+        * SCOTCH
+        * PARMETIS
+        * MPI
+        * Zlib
+        * HDF5
+        * UMFPACK
+        * CHOLMOD
+        * BLAS
+
+#### 3.0. Create a directory (let’s call this fenics_legacy) where the installation-from-source will take place, and go into that directory
+```
+mkdir [your_path]/fenics_legacy
+cd [your_path]/fenics_legacy
+```
+
+#### 3.1. Install Pybind11 (in [your_path]/fenics_legacy)
+Downloading .tar file of Pybind and untar
+```
+PYBIND11_VERSION=2.2.4
+wget -nc --quiet https://github.com/pybind/pybind11/archive/v${PYBIND11_VERSION}.tar.gz
+tar -xf v${PYBIND11_VERSION}.tar.gz
+```
+
+Make directories for build and install
+```
+cd pybind11-${PYBIND11_VERSION}
+mkdir build install_dir
+```
+Compile source file with cmake
+```
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=../install_dir/ -DPYBIND11_TEST=off
+```
+Install
+```
+make install
+```
+
+#### 3.2. Install Eigen3
 
 
 &nbsp; GNNs use the graph structure and node features $X_v$ to learn a representation vector of a node, $h_v$, or the entire graph, $h_G$. Modern GNNs follow a neighborhood aggregation strategy, where we iteratively update the representation of a node by aggregating representations of its neighbors. 
