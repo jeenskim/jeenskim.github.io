@@ -64,7 +64,7 @@ chmod 644 ~/.ssh/id_rsa.pub
 
 <br/>
 
-### 5. ssh -L 8888:localhost:8888 <your_username>@<compute node>
+### 5. ssh -L 8888:localhost:8888 [your_username]@[compute node]
 
 <br/>
 
