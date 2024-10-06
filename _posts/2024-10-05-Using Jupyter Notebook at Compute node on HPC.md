@@ -47,7 +47,10 @@ UserKnownHostsFile=/dev/null
 
 <br/>
 
-### 3. Confirm the following files exist in your .ssh directory and the permissions are set to the following: 1. -rw------- (600) authorized_keys 2. -rw-r--r-- (644) config 3. -rw------- (600) id_rsa 4. -rw-r--r-- (644) id_rsa.pub
+### 3. Confirm the following files exist in your .ssh directory and the permissions are set to the following: 
+
+1. -rw------- (600) authorized_keys 2. -rw-r--r-- (644) config 3. -rw------- (600) id_rsa 4. -rw-r--r-- (644) id_rsa.pub
+<br/>
 
 ```
 chmod 600 ~/.ssh/authorized_keys
