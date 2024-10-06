@@ -106,7 +106,11 @@ pip install --user mpi4torch --no-build-isolation
         * UMFPACK
         * CHOLMOD
         * BLAS
+
+
 <br/>
+
+
 #### 3.0. Create a directory (let’s call this fenics_legacy) where the installation-from-source will take place, and go into that directory
 ```
 mkdir [your_path]/fenics_legacy
