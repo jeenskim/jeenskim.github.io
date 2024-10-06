@@ -208,7 +208,7 @@ Downloading git folder
 git clone -b release https://gitlab.com/petsc/petsc
 ```
 
-Configure source code with ./configure and other package options
+Configure source code with `./configure` and other package options
 ```
 cd petsc
 ./configure --with-single-library=1 --download-fblaslapack --download-mumps --download-scalapack --download-parmetis --download-metis --download-ptscotch --download-hypre
@@ -251,7 +251,7 @@ Downloading git folder
 git clone -b release https://gitlab.com/slepc/slepc
 ```
 
-Configure source code with ./configure
+Configure source code with `./configure`
 ```
 cd slepc export PETSC_DIR=[your_path]/fenics_legacy/petsc
 export PETSC_ARCH=arch-linux-c-debug
@@ -369,7 +369,8 @@ make install
 Error message : _[your_path]/fenics_legacy/dolfin/dolfin/io/HDF5Interface.cpp:285:22: error: too few arguments to function ‘herr_t H5Oget_info_by_name3(hid_t, const char*, H5O_info2_t*, unsigned int, hid_t)’_
 
 
-`vi fenics_legacy/dolfin/dolfin/io/HDF5Interface.cpp  @ line 285 `  
+`vi fenics_legacy/dolfin/dolfin/io/HDF5Interface.cpp `
+@ line 285  
 Replace //H5Oget_info_by_name(hdf5_file_handle, group_name.c_str(), &object_info,
 //                    lapl_id);
 With _H5Oget_info_by_name3(hdf5_file_handle, group_name.c_str(), &object_info, H5O_INFO_ALL, H5P_DEFAULT);_
