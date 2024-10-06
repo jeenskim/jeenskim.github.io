@@ -244,7 +244,8 @@ pip install --user .
 <br/>
 
 
-#### 3.5. Install SLEPc (https://slepc.upv.es/download/) (https://slepc.upv.es/documentation/slepc.pdf)
+#### 3.5. Install SLEPc 
+(<https://slepc.upv.es/download/>, <https://slepc.upv.es/documentation/slepc.pdf>)
 Downloading git folder
 ```
 git clone -b release https://gitlab.com/slepc/slepc
