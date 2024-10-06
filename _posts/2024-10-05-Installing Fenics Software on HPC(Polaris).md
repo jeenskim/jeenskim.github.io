@@ -258,12 +258,155 @@ ln -s libslepc.so.3.21.1 libslepc.so.3.17
 Install python wrapper for slepc using pip
 ```
 cd [your_path]/fenics_legacy/petsc/src/binding/petsc4py
-export PETSC_DIR=/grand/NeuralDE/hjkim/fenics_legacy/petsc-3.17.3
+export SLEPC_DIR=/grand/NeuralDE/hjkim/fenics_legacy/slepc-3.17.3
 export PETSC_ARCH=arch-linux-c-debug
 pip install --user .
 ```
 
 <br/>
+
+
+#### 3.6. Building and Installing dolfin
+
+Downloading git folder
+```
+cd [your_path]/fenics_legacy
+FENICS_VERSION=$(python3 -c"import ffc; print(ffc.__version__)")
+git clone --branch=$FENICS_VERSION https://bitbucket.org/fenics-project/dolfin
+```
+
+Make build and install directories
+```
+cd dolfin
+mkdir build install_dir
+cd build
+```
+
+Set environment variables for pre-installed packages
+```
+export PETSC_DIR=[your_path]/fenics_legacy/petsc
+export PETSC_ARCH=arch-linux-c-debug
+
+export SLEPC_DIR=/grand/NeuralDE/hjkim/fenics_legacy/slepc
+export SLEPC_ARCH=arch-linux-c-debug
+
+
+export SCOTCH_DIR=/grand/NeuralDE/hjkim/fenics_legacy/petsc/arch-linux-c-debug
+export SCOTCH_LIBRARIES=/grand/NeuralDE/hjkim/fenics_legacy/petsc/arch-linux-c-debug/lib
+export SCOTCH_LIBRARIES=/grand/NeuralDE/hjkim/fenics_legacy/petsc/arch-linux-c-debug/include
+
+export PARMETIS_DIR=//grand/NeuralDE/hjkim/fenics_legacy/petsc/arch-linux-c-debug
+export PARMETIS_LIBRARIES=/grand/NeuralDE/hjkim/fenics_legacy/petsc/arch-linux-c-debug/lib
+export PARMETIS_INCLUDE_DIRS=/grand/NeuralDE/hjkim/fenics_legacy/petsc/arch-linux-c-debug/include
+
+
+
+export PETSC_DIR=/grand/NeuralDE/hjkim/fenics_legacy/petsc_new
+export PETSC_ARCH=arch-linux-c-debug
+
+export SLEPC_DIR=/grand/NeuralDE/hjkim/fenics_legacy/slepc_new
+export SLEPC_ARCH=arch-linux-c-debug
+
+
+export SCOTCH_DIR=/grand/NeuralDE/hjkim/fenics_legacy/petsc_new/arch-linux-c-debug
+export SCOTCH_LIBRARIES=/grand/NeuralDE/hjkim/fenics_legacy/petsc_new/arch-linux-c-debug/lib
+export SCOTCH_LIBRARIES=/grand/NeuralDE/hjkim/fenics_legacy/petsc_new/arch-linux-c-debug/include
+
+export PARMETIS_DIR=//grand/NeuralDE/hjkim/fenics_legacy/petsc_new/arch-linux-c-debug
+export PARMETIS_LIBRARIES=/grand/NeuralDE/hjkim/fenics_legacy/petsc_new/arch-linux-c-debug/lib
+export PARMETIS_INCLUDE_DIRS=/grand/NeuralDE/hjkim/fenics_legacy/petsc_new/arch-linux-c-debug/include
+
+
+export UMFPACK_DIR=/grand/NeuralDE/hjkim/fenics_legacy/petsc_new/arch-linux-c-debug
+export UMFPACK_LIBRARIES=/grand/NeuralDE/hjkim/fenics_legacy/petsc_new/arch-linux-c-debug/lib
+export UMFPACK_INCLUDE_DIR=/grand/NeuralDE/hjkim/fenics_legacy/petsc_new/arch-linux-c-debug/include/suitesparse
+
+export CHOLMOD_DIR=/grand/NeuralDE/hjkim/fenics_legacy/petsc_new/arch-linux-c-debug
+export CHOLMOD_LIBRARIES=/grand/NeuralDE/hjkim/fenics_legacy/petsc_new/arch-linux-c-debug/lib
+export CHOLMOD_INCLUDE_DIR=/grand/NeuralDE/hjkim/fenics_legacy/petsc_new/arch-linux-c-debug/include/suitesparse
+
+
+
+export BLAS_DIR=/grand/NeuralDE/hjkim/fenics_legacy/petsc_new/arch-linux-c-debug
+export BLAS_LIBRARIES=/grand/NeuralDE/hjkim/fenics_legacy/petsc_new/arch-linux-c-debug/lib
+export BLAS_INCLUDE_DIR=/grand/NeuralDE/hjkim/fenics_legacy/petsc_new/arch-linux-c-debug/include
+
+```
+
+Load HDF5 module required to compile
+```
+module load cray-hdf5-parallel/1.12.2.9
+```
+
+Compile source code with cmake
+```
+cmake .. -DBOOST_ROOT=/grand/NeuralDE/hjkim/fenics_legacy/boost_1_70_0/install_dir -DEIGEN3_INCLUDE_DIR=/grand/NeuralDE/hjkim/fenics_legacy/eigen/install_dir/include/eigen3 -DCMAKE_INSTALL_PREFIX=../install_dir/ -DHDF5_ROOT=/opt/cray/pe/hdf5-parallel/1.12.2.9 
+
+cmake .. -DBOOST_ROOT=/grand/NeuralDE/hjkim/fenics_legacy/boost_1_70_0/install_dir -DEIGEN3_INCLUDE_DIR=/grand/NeuralDE/hjkim/fenics_legacy/eigen/install_dir/include/eigen3 -DCMAKE_INSTALL_PREFIX=../install_dir_new/ -DHDF5_ROOT=/opt/cray/pe/hdf5-parallel/1.12.2.9
+```
+
+Install
+```
+make install
+```
+
+
+(If this error occurs while installing)
+Error message : _[your_path]/fenics_legacy/dolfin/dolfin/io/HDF5Interface.cpp:285:22: error: too few arguments to function ‘herr_t H5Oget_info_by_name3(hid_t, const char*, H5O_info2_t*, unsigned int, hid_t)’_
+
+
+`vi fenics_legacy/dolfin/dolfin/io/HDF5Interface.cpp  @ line 285 `  
+Replace //H5Oget_info_by_name(hdf5_file_handle, group_name.c_str(), &object_info,
+//                    lapl_id);
+With _H5Oget_info_by_name3(hdf5_file_handle, group_name.c_str(), &object_info, H5O_INFO_ALL, H5P_DEFAULT);_
+
+<br/>
+
+
+#### 3.7. Install python wrapper for dolfin
+```
+source [your_path]/fenics_legacy/dolfin/install_dir/share/dolfin/dolfin.conf 
+export pybind11_DIR=[your_path]/fenics_legacy/pybind11-2.2.4/install_dir/share/cmake/pybind11
+
+export pybind11_DIR=/grand/NeuralDE/hjkim/fenics_legacy/pybind11-2.2.4/install_dir/share/cmake/pybind11
+```
+
+Install python wrapper for dolfin using pip
+```
+cd [your_path]/fenics_legacy/dolfin/python
+pip install --user .
+```
+
+### 4. Enjoy
+
+Whenever restarting your session,
+```
+module restore
+module use /soft/modulefiles/
+module load jax/0.4.29-dev
+module load cmake
+source [your_path]/fenics_legacy/dolfin/install_dir/share/dolfin/dolfin.conf
+```
+
+Or when submitting job using bash script,
+```
+# proxy settings
+export HTTP_PROXY="http://proxy.alcf.anl.gov:3128"
+export HTTPS_PROXY="http://proxy.alcf.anl.gov:3128"
+export http_proxy="http://proxy.alcf.anl.gov:3128"
+export https_proxy="http://proxy.alcf.anl.gov:3128"
+export ftp_proxy="http://proxy.alcf.anl.gov:3128"
+export no_proxy="admin,polaris-adminvm-01,localhost,*.cm.polaris.alcf.anl.gov,polaris-*,*.polaris.alcf.anl.gov,*.alcf.anl.gov"
+
+module restore
+module use /soft/modulefiles/
+module load jax/0.4.29-dev
+export MPICH_GPU_SUPPORT_ENABLED=0
+source /grand/NeuralDE/hjkim/fenics_legacy/dolfin/install_dir/share/dolfin/dolfin.conf
+
+source /grand/NeuralDE/hjkim/fenics_legacy/dolfin/install_dir_new/share/dolfin/dolfin.conf
+```
+
 
 &nbsp; GNNs use the graph structure and node features $X_v$ to learn a representation vector of a node, $h_v$, or the entire graph, $h_G$. Modern GNNs follow a neighborhood aggregation strategy, where we iteratively update the representation of a node by aggregating representations of its neighbors. 
 After $k$ iterations of aggregation, a node's representation captures the structural information within its k-hop network neighborhood.
