@@ -202,7 +202,8 @@ Install
 <https://petsc.org/release/manualpages/Mat/MATSOLVERMUMPS/>, 
 <https://github.com/PrincetonUniversity/EDIPIC-2D/blob/main/Instructions/installing_PETSc.md>)
 
-We can install some of other optional packages(SCOTCH, PARMETIS) together
+We can install some of other optional packages(SCOTCH, PARMETIS) together.
+
 Downloading git folder
 ```
 git clone -b release https://gitlab.com/petsc/petsc
