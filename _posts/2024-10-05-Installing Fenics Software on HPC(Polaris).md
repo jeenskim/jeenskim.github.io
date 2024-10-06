@@ -74,6 +74,7 @@ pip install --user functorch==0.2.1
 torch.concatenate -> torch.cat
 
 torch.vmap -> functorch.vmap
+
 <br/>
 
 #### 2.4. Install mpi4torch
