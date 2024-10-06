@@ -67,16 +67,20 @@ This enables the use of additional torch function (e.g. functorch.vmap)
 pip install --user functorch==0.2.1 
 ```
 <br/>
+
 #### 2.3. Change in train.py (Ignore this if already changed)
 torch.concatenate -> torch.cat
+
 torch.vmap -> functorch.vmap
 <br/>
+
 #### 2.4. Install mpi4torch
 This enables MPI calculation for torch.tensor
 ```
 pip install --user mpi4torch --no-build-isolation
 ```
 <br/>
+
 ### 3. Install Fenics
 - Installing Fenics is composed of three big steps
     * Install necessary and optional packages required by Fenics
