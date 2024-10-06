@@ -31,7 +31,7 @@ export https_proxy="http://proxy.alcf.anl.gov:3128"
 export ftp_proxy="http://proxy.alcf.anl.gov:3128"
 export no_proxy="admin,polaris-adminvm-01,localhost,*.cm.polaris.alcf.anl.gov,polaris-*,*.polaris.alcf.anl.gov,*.alcf.anl.gov"
 ```
-
+<br/>
 #### 1.2. Module setup
 This initialize loaded modules and load some necessary modules
 
@@ -42,7 +42,7 @@ module load jax/0.4.29-dev
 module load cmake
 export MPICH_GPU_SUPPORT_ENABLED=0
 ```
-
+<br/>
 ### 2. Pytorch & torch-related libraries
 #### 2.1. Install PyTorch, other torch-related libraries, torch_geometric
 Install torch, torchvision and torch audio
@@ -60,29 +60,29 @@ Install torch_geometric
 ```
 pip install --user torch_geometric
 ```
-
+<br/>
 #### 2.2. Install functorch(https://pytorch.org/functorch/versions.html)
 This enables the use of additional torch function (e.g. functorch.vmap)
 ```
 pip install --user functorch==0.2.1 
 ```
-
+<br/>
 #### 2.3. Change in train.py (Ignore this if already changed)
 torch.concatenate -> torch.cat
 torch.vmap -> functorch.vmap
-
+<br/>
 #### 2.4. Install mpi4torch
 This enables MPI calculation for torch.tensor
 ```
 pip install --user mpi4torch --no-build-isolation
 ```
-
+<br/>
 ### 3. Install Fenics
 - Installing Fenics is composed of three big steps
     * Install necessary and optional packages required by Fenics
     * Compilation of dolfin source code with those pre-installed packages
     * Installation of dolfin packages
-
+<br/>
 - Pre-installed necessary and optional packages required by Fenics
     * Necessary packages
         * Pybind11
@@ -99,13 +99,13 @@ pip install --user mpi4torch --no-build-isolation
         * UMFPACK
         * CHOLMOD
         * BLAS
-
+<br/>
 #### 3.0. Create a directory (let’s call this fenics_legacy) where the installation-from-source will take place, and go into that directory
 ```
 mkdir [your_path]/fenics_legacy
 cd [your_path]/fenics_legacy
 ```
-
+<br/>
 #### 3.1. Install Pybind11 (in [your_path]/fenics_legacy)
 Downloading .tar file of Pybind and untar
 ```
@@ -128,7 +128,7 @@ Install
 ```
 make install
 ```
-
+<br/>
 #### 3.2. Install Eigen3
 
 
