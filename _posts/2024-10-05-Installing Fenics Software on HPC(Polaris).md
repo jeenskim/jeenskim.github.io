@@ -379,6 +379,8 @@ With _H5Oget_info_by_name3(hdf5_file_handle, group_name.c_str(), &object_info, H
 
 
 #### 3.7. Install python wrapper for dolfin
+
+Source and setup environment variables
 ```
 source [your_path]/fenics_legacy/dolfin/install_dir/share/dolfin/dolfin.conf 
 export pybind11_DIR=[your_path]/fenics_legacy/pybind11-2.2.4/install_dir/share/cmake/pybind11
@@ -391,6 +393,8 @@ Install python wrapper for dolfin using pip
 cd [your_path]/fenics_legacy/dolfin/python
 pip install --user .
 ```
+
+<br/>
 
 ### 4. Enjoy
 
