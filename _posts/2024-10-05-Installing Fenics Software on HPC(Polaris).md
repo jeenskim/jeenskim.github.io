@@ -134,8 +134,136 @@ Install
 make install
 ```
 <br/>
+
 #### 3.2. Install Eigen3
 
+Downloading git folder
+```
+cd [your_path]/fenics_legacy
+git clone --recursive https://gitlab.com/libeigen/eigen.git
+```
+
+Get Eigen3==3.3.0 version and make directories for build and install
+```
+cd eigen
+git checkout tags/3.3.0
+mkdir build install_dir
+```
+Compile source code with cmake
+```
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=../install_dir/
+```
+Install
+```
+make install
+```
+<br/>
+
+#### 3.3. Install Boost
+First, download Boost 1.70.0 from here: https://archives.boost.io/release/1.70.0/source/boost_1_70_0.tar.gz, and place it in [your_path]/fenics_legacy
+
+Untar istalled .tar file
+```
+cd [your_path]/fenics_legacy
+tar -xvf boost_1_70_0.tar.gz
+```
+
+Make directory for install
+```
+cd boost_1_70_0
+mkdir install_dir
+```
+
+Compile source code with bash(bootstrap.sh) file
+```
+./bootstrap.sh
+```
+
+Install
+```
+./b2 install --prefix=install_dir/
+```
+
+<br/>
+
+
+#### 3.4. Install PETSc (https://petsc.org/release/install/install_tutorial/, https://petsc.org/release/manualpages/Mat/MATSOLVERMUMPS/, https://github.com/PrincetonUniversity/EDIPIC-2D/blob/main/Instructions/installing_PETSc.md)
+We can install some of other optional packages(SCOTCH, PARMETIS) together
+Downloading git folder
+```
+git clone -b release https://gitlab.com/petsc/petsc
+```
+
+Configure source code with ./configure and other package options
+```
+cd petsc
+./configure --with-single-library=1 --download-fblaslapack --download-mumps --download-scalapack --download-parmetis --download-metis --download-ptscotch --download-hypre
+
+
+./configure --with-single-library=1 --download-openblas --download-mumps --download-scalapack --download-parmetis --download-metis --download-ptscotch --download-hypre --download-suitesparse --download-fftw --download-superlu --download-superlu_dist
+
+
+./configure --with-single-library=1 --with-blas-lib=/opt/nvidia/hpc_sdk/Linux_x86_64/23.9/compilers/lib/libblas.a --with-lapack-lib=/opt/nvidia/hpc_sdk/Linux_x86_64/23.9/compilers/lib/liblapack.a --download-mumps --download-scalapack --download-parmetis --download-metis --download-ptscotch --download-hypre --download-suitesparse --download-fftw --download-superlu --download-superlu_dist
+```
+
+Install and check
+```
+make PETSC_DIR=[your_path]/fenics_legacy/petsc PETSC_ARCH=arch-linux-c-debug all check
+```
+
+Make linkage of ‘libpetsc.so.3.21.5’ with ‘libpetsc.so.3.17’
+```
+cd [your_path]/fenics_legacy/petsc/arch-linux-c-debug/lib
+ ln -s libpetsc.so.3.21.5 libpetsc.so.3.17
+```
+
+
+Install python wrapper for petsc using pip
+```
+cd [your_path]/fenics_legacy/petsc/src/binding/petsc4py
+export PETSC_DIR=/grand/NeuralDE/hjkim/fenics_legacy/petsc-3.17.3
+export PETSC_ARCH=arch-linux-c-debug
+pip install --user .
+```
+
+
+<br/>
+
+
+#### 3.5. Install SLEPc (https://slepc.upv.es/download/) (https://slepc.upv.es/documentation/slepc.pdf)
+Downloading git folder
+```
+git clone -b release https://gitlab.com/slepc/slepc
+```
+
+Configure source code with ./configure
+```
+cd slepc export PETSC_DIR=[your_path]/fenics_legacy/petsc
+export PETSC_ARCH=arch-linux-c-debug
+./configure
+```
+Install and check
+```
+make 
+make check
+```
+
+Make linkage of ‘libslepc.so.3.21.5’ with ‘libslepc.so.3.17’
+```
+cd [your_path]/fenics_legacy/slepc/arch-linux-c-debug/lib
+ln -s libslepc.so.3.21.1 libslepc.so.3.17
+```
+
+Install python wrapper for slepc using pip
+```
+cd [your_path]/fenics_legacy/petsc/src/binding/petsc4py
+export PETSC_DIR=/grand/NeuralDE/hjkim/fenics_legacy/petsc-3.17.3
+export PETSC_ARCH=arch-linux-c-debug
+pip install --user .
+```
+
+<br/>
 
 &nbsp; GNNs use the graph structure and node features $X_v$ to learn a representation vector of a node, $h_v$, or the entire graph, $h_G$. Modern GNNs follow a neighborhood aggregation strategy, where we iteratively update the representation of a node by aggregating representations of its neighbors. 
 After $k$ iterations of aggregation, a node's representation captures the structural information within its k-hop network neighborhood.
