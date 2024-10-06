@@ -17,12 +17,12 @@ Contents
 3. Install Fenics
 4. Enjoy
 
-
+<br/>
 
 ### 1. Enabling ssh between Polaris Compute Nodes 
 (<https://docs.alcf.anl.gov/polaris/known-issues/>)
 
-1. cd /home/<username>/.ssh
+1. cd /home/[username]/.ssh
 2. ssh-keygen -t rsa
 3. create authorized_keys file and copy id_rsa.pub into authorized_keys
 4. Try setting up your .ssh/config file like this (swapping out the username placeholder with your ALCF username)
@@ -45,6 +45,7 @@ UserKnownHostsFile=/dev/null
 
 ### 2. Your /home/<username> directory permissions should be set to 700 (chmod 700 /home/<username>)
 
+<br/>
 
 ### 3. Confirm the following files exist in your .ssh directory and the permissions are set to the following: 1. -rw------- (600) authorized_keys 2. -rw-r--r-- (644) config 3. -rw------- (600) id_rsa 4. -rw-r--r-- (644) id_rsa.pub
 
@@ -54,12 +55,20 @@ chmod 644 ~/.ssh/config
 chmod 600 ~/.ssh/id_rsa
 chmod 644 ~/.ssh/id_rsa.pub
 ```
-
+<br/>
 
 ### 4. Allocate debug node
 
+<br/>
+
 ### 5. ssh -L 8888:localhost:8888 <your_username>@<compute node>
+
+<br/>
 
 ### 6. jupyter notebook --no-browser --port=8888
 
+<br/>
+
 ### 7. Open in browser
+
+<br/>
