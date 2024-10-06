@@ -168,7 +168,9 @@ make install
 <br/>
 
 #### 3.3. Install Boost
-First, download Boost 1.70.0 from here: https://archives.boost.io/release/1.70.0/source/boost_1_70_0.tar.gz, and place it in [your_path]/fenics_legacy
+First, download Boost 1.70.0 from here: 
+<https://archives.boost.io/release/1.70.0/source/boost_1_70_0.tar.gz>, 
+and place it in [your_path]/fenics_legacy
 
 Untar istalled .tar file
 ```
@@ -195,7 +197,11 @@ Install
 <br/>
 
 
-#### 3.4. Install PETSc (https://petsc.org/release/install/install_tutorial/, https://petsc.org/release/manualpages/Mat/MATSOLVERMUMPS/, https://github.com/PrincetonUniversity/EDIPIC-2D/blob/main/Instructions/installing_PETSc.md)
+#### 3.4. Install PETSc 
+(<https://petsc.org/release/install/install_tutorial/>, 
+<https://petsc.org/release/manualpages/Mat/MATSOLVERMUMPS/>, 
+<https://github.com/PrincetonUniversity/EDIPIC-2D/blob/main/Instructions/installing_PETSc.md>)
+
 We can install some of other optional packages(SCOTCH, PARMETIS) together
 Downloading git folder
 ```
