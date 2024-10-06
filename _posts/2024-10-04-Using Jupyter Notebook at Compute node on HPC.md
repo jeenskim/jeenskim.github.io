@@ -2,8 +2,8 @@
 layout: post
 title: Using Jupyter notebook at compute node on HPC
 cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/HPC.png
-share-img: /assets/img/HPC.png
+thumbnail-img: /assets/img/Jupyternotebook.png
+share-img: /assets/img/Jupyternotebook.png
 tags: [HPC]
 ---
 
