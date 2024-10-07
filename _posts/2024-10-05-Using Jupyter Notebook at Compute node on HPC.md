@@ -43,7 +43,9 @@ UserKnownHostsFile=/dev/null
 <br/>
 
 
-### 2. Your /home/<username> directory permissions should be set to 700 (`chmod 700 /home/<username>`)
+### 2. Your /home/<username> directory permissions should be set to 700
+
+`chmod 700 /home/<username>`
 
 <br/>
 
