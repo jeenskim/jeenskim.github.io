@@ -43,7 +43,7 @@ UserKnownHostsFile=/dev/null
 <br/>
 
 
-### 2. Your /home/<username> directory permissions should be set to 700 (chmod 700 /home/<username>)
+### 2. Your /home/<username> directory permissions should be set to 700 (`chmod 700 /home/<username>`)
 
 <br/>
 
@@ -64,11 +64,11 @@ chmod 644 ~/.ssh/id_rsa.pub
 
 <br/>
 
-### 5. ssh -L 8888:localhost:8888 [your_username]@[compute node]
+### 5. `ssh -L 8888:localhost:8888 [your_username]@[compute node]`
 
 <br/>
 
-### 6. jupyter notebook --no-browser --port=8888
+### 6. `jupyter notebook --no-browser --port=8888`
 
 <br/>
 
