@@ -79,3 +79,9 @@ chmod 644 ~/.ssh/id_rsa.pub
 ### 7. Open in local browser
 
 <br/>
+
+### 8. Or if you want to use jupyter notebook on Visual code,
+1. Select Kernel
+2. Select Another Kernel
+3. Exisiting Jupyter Server
+4. Copy the URL
