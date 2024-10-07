@@ -67,11 +67,12 @@ chmod 644 ~/.ssh/id_rsa.pub
 <br/>
 
 ### 5. Setting port forwarding using SSH to construct connection between local node and remote node. 
+From the login node, excute the below command:
 `ssh -L 8888:localhost:8888 [your_username]@[compute node]`
 
 <br/>
 
-### 6. Execute jupyter notebook at compute node
+### 6. Execute jupyter notebook at the compute node
 `jupyter notebook --no-browser --port=8888`
 
 <br/>
