@@ -11,12 +11,6 @@ _The thumbnail image is created by chatGPT-4o_
 ###### This content explains how to use Jupyter notebook at a compute node on HPC environment.
 <br/>
 
-Contents
-1. Basic settings
-2. Pytorch & torch-related libraries
-3. Install Fenics
-4. Enjoy
-
 <br/>
 
 ### 1. Enabling ssh between Polaris Compute Nodes 
