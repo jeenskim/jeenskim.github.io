@@ -68,6 +68,7 @@ chmod 644 ~/.ssh/id_rsa.pub
 
 ### 5. Setting port forwarding using SSH to construct connection between local node and remote node. 
 From the login node, excute the below command:
+<br/>
 `ssh -L 8888:localhost:8888 [your_username]@[compute node]`
 
 <br/>
