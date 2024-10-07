@@ -22,8 +22,8 @@ Contents
 ### 1. Enabling ssh between Polaris Compute Nodes 
 (<https://docs.alcf.anl.gov/polaris/known-issues/>)
 
-1. cd /home/[username]/.ssh
-2. ssh-keygen -t rsa
+1. `cd /home/[username]/.ssh`
+2. `ssh-keygen -t rsa`
 3. create authorized_keys file and copy id_rsa.pub into authorized_keys
 4. Try setting up your .ssh/config file like this (swapping out the username placeholder with your ALCF username)
 
