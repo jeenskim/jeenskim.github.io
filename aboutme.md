@@ -5,6 +5,7 @@ subtitle: Thanks for coming to my Webpage.
 ---
 
 ![Profile](https://jeenskim.github.io/assets/img/IMG_0502.jpeg)
+(picture from Grand canyon after 2024 APS-DFD)
 
 Hi, my name is Hojin Kim. <br>
 I'm a PhD student at the College of Information Science and Technology at Penn State University. <br>
