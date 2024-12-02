@@ -22,7 +22,7 @@ author: Hojin Kim
 navbar-links:
   About Me: "aboutme"
   Research: "research"
-  Post: "_posts"
+  Posts: "/posts/"
 
 ################
 # --- Logo --- #
