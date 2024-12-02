@@ -6,8 +6,6 @@ subtitle: Thanks for coming to my Webpage.
 
 ![Profile](https://jeenskim.github.io/assets/img/IMG_0502.jpeg)
 
-# {: width="30%" height="30%"}
-
 Hi, my name is Hojin Kim. <br>
 I'm a PhD student at the College of Information Science and Technology at Penn State University. <br>
 I joined [ISCL(Interdisciplinary Scientific Computing Laboratory)](https://romit-maulik.github.io/index.html), and I am working with [Prof. Romit Maulik](https://romit-maulik.github.io/Members.html). <br>
