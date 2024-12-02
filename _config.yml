@@ -22,7 +22,6 @@ author: Hojin Kim
 navbar-links:
   - title: "About Me"
     url: "/aboutme/"
-  - title: "Dropdown"
     dropdown:
       - title: "Test 1"
         url: "/aboutme/"
