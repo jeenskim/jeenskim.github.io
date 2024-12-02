@@ -21,6 +21,8 @@ author: Hojin Kim
 
 navbar-links:
   About Me: "aboutme"
+  dropdown:
+    test: "aboutme"
   Research: "research"
   Post: "/"
 
