@@ -20,11 +20,18 @@ author: Hojin Kim
 ###############################################
 
 navbar-links:
-  About Me: "aboutme"
-  dropdown:
-    test: "aboutme"
-  Research: "research"
-  Post: "/"
+  - title: "About Me"
+    url: "/aboutme/"
+  - title: "Dropdown"
+    dropdown:
+      - title: "Test 1"
+        url: "/aboutme/"
+      - title: "Test 2"
+        url: "/research/"
+  - title: "Research"
+    url: "/research/"
+  - title: "Post"
+    url: "/"
 
 ################
 # --- Logo --- #
