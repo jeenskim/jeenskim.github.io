@@ -24,7 +24,7 @@ B.S., Aerospace Engineering, Seoul National University, 2015.03 - 2021.02 <br>
 
 #### Publication
 
-Barwey, S., \textbf{Kim, H.}, \& Maulik, R. (2025). ``Interpretable A-posteriori error indication for graph neural network surrogate models.," \textit{Computer Methods in Applied Mechanics and Engineering}, 433, 117509., doi: [https://doi.org/10.1016/j.cma.2024.117509](https://doi.org/10.1016/j.cma.2024.117509) <br>
+Barwey, S., $\textbf{Kim, H.}$, \& Maulik, R. (2025). ``Interpretable A-posteriori error indication for graph neural network surrogate models.," \textit{Computer Methods in Applied Mechanics and Engineering}, 433, 117509., doi: [https://doi.org/10.1016/j.cma.2024.117509](https://doi.org/10.1016/j.cma.2024.117509) <br>
 
 \textbf{Kim, H.}, Shankar, V., Viswanathan, \& Maulik, R. (2024). ``Generalizable data-driven turbulence closure modeling on unstructured grids with differentiable physics.,'' \textit{arXiv preprint arXiv:2307.13533.}, doi: [
 https://doi.org/10.48550/arXiv.2307.13533](
