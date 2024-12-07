@@ -24,6 +24,7 @@ navbar-links:
     - Profile: "aboutme"
     - Trip: "aboutme"
   Research Post: "/"
+  CV: "https://github.com/jeenskim/jeenskim.github.io/blob/a785fc6cfdde15b217495bc17798f6c9012ed83b/CV-2.pdf"
 
 ################
 # --- Logo --- #
