@@ -424,5 +424,4 @@ module load jax/0.4.29-dev
 export MPICH_GPU_SUPPORT_ENABLED=0
 source /grand/NeuralDE/hjkim/fenics_legacy/dolfin/install_dir/share/dolfin/dolfin.conf
 
-source /grand/NeuralDE/hjkim/fenics_legacy/dolfin/install_dir_new/share/dolfin/dolfin.conf
 ```
