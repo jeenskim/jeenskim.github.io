@@ -278,6 +278,7 @@ print("Total GPU execution time:", end - start)
 
 <br/>
 
+#### 14.1. IPCS algorithm
 ```
 # Step 1: Tentative velocity step
 b1 = assemble(L1)
