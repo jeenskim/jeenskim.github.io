@@ -24,32 +24,105 @@ pip install cupy-cuda12x
 <br/>
 
 
-### 2. create anaconda environment and activate the environment
+### 2. Import required library
 
 ```
-conda create --name jax python=3.9
-conda activate jax
+from fenics import * 
+import matplotlib.pyplot as plt 
+import numpy as np 
+import time
+import matplotlib.pyplot as plt
+import cupy
+import cupyx.scipy.sparse
+import cupyx.scipy.sparse.linalg
+import scipy.sparse as sps
+import scipy.sparse.linalg as spsl
+mempool = cupy.get_default_memory_pool()
+with cupy.cuda.Device(0):
+    mempool.set_limit(size=40*1024**3)
+parameters['linear_algebra_backend'] = 'Eigen'
 ```
 
 <br/>
 
 
-### 3. install gpu-enabled jax 
-(<https://docs.jax.dev/en/latest/installation.html>)
+### 3. Define helper function
 
 ```
-pip install --upgrade "jax[cuda12_pip]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+def tran2SparseMatrix(A):
+    row, col, val = as_backend_type(A).data()
+    return sps.csr_matrix((val, col, row))
 ```
 
 <br/>
 
 
-### 3. test
+### 4. Define simulation parameters
 
 ```
-python
-import jax
-jax.devices()
+T = 2.0            # final time
+num_steps = 5000   # number of time steps
+dt = T / num_steps # time step size
+mu = 0.001         # dynamic viscosity
+rho = 1            # density
+```
+
+<br/>
+
+### 5. Load mesh
+
+```
+msh = Mesh()
+with XDMFFile(MPI.comm_world, 'cylinder_dense.xdmf') as xdmf_file:
+    xdmf_file.read(msh)
+```
+
+<br/>
+
+
+### 6. Define Function Space
+
+```
+V = VectorFunctionSpace(msh, 'P', 2)
+Q = FunctionSpace(msh, 'P', 1)
+```
+
+<br/>
+
+### 7. Define Boundaries
+
+```
+inflow   = 'near(x[0], 0)'
+outflow  = 'near(x[0], 2.2)'
+walls    = 'near(x[1], 0) || near(x[1], 0.41)'
+cylinder = 'on_boundary && x[0]>0.1 && x[0]<0.3 && x[1]>0.1 && x[1]<0.3'
+
+# Define inflow profile
+inflow_profile = ('4.0*1.5*x[1]*(0.41 - x[1]) / pow(0.41, 2)', '0')
+
+# Define boundary conditions
+bcu_inflow = DirichletBC(V, Expression(inflow_profile, degree=2), inflow)
+bcu_walls = DirichletBC(V, Constant((0, 0)), walls)
+bcu_cylinder = DirichletBC(V, Constant((0, 0)), cylinder)
+bcp_outflow = DirichletBC(Q, Constant(0), outflow)
+bcu = [bcu_inflow, bcu_walls, bcu_cylinder]
+bcp = [bcp_outflow]
+```
+
+<br/>
+
+### 8. Define trial and test functions
+
+```
+u = TrialFunction(V)
+v = TestFunction(V)
+p = TrialFunction(Q)
+q = TestFunction(Q)
+
+u_n = Function(V)
+u_  = Function(V)
+p_n = Function(Q)
+p_  = Function(Q)
 ```
 
 <br/>
