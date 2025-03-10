@@ -8,7 +8,7 @@ tags: [HPC, GPU]
 ---
 
 _The thumbnail image is created by chatGPT-4o_
-###### This content explains how to set up GPU-enabled JAX environment for HPC settings, espeically ICDS at the Pennstate University.
+###### This content explains how to accelerate FeniCS simulation using GPU & Eigen backend.
 <br/>
 
 <br/>
