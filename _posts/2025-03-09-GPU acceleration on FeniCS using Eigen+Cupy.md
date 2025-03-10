@@ -8,7 +8,7 @@ tags: [HPC, GPU]
 ---
 
 _The thumbnail image is created by chatGPT-4o_
-###### This content explains how to accelerate FeniCS simulation using GPU & Eigen backend.
+###### This content explains how to implement GPU acceleration on FeniCS using Eigen + Cupy.
 <br/>
 
 <br/>
