@@ -318,9 +318,9 @@ u_.vector()[:] = cupy.asnumpy(cupyx.scipy.sparse.linalg.cg(A3_gpu, b3_gpu)[0])
 #### 15.1. # of Cells = 24,287
 - CPUs/iteration: 0.32sec
 - GPUs/iteration: 0.16sec
-- 2 times faster
+- **2 times faster**
 
 #### 15.2. # of Cells = 595,161
 - CPUs/iteration: 10.90sec
 - GPUs/iteration: 1.62sec
-- 6.72 times faster
+- **6.72 times faster**
