@@ -14,11 +14,11 @@ _The thumbnail image is created by chatGPT-4o_
 <br/>
 
 
-### 1. loading relevent modules 
+### 1. Install Cupy based on the installed CUDA version
+(<https://pypi.org/project/cupy-cuda12x/>)
 
 ```
-module load anaconda
-module load cuda/12.6.0
+pip install cupy-cuda12x
 ```
 
 <br/>
