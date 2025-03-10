@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GPU acceleration on FeniCS using Eigen backend
+title: GPU acceleration on FeniCS using Eigen + Cupy
 cover-img: /assets/img/path.jpg
 thumbnail-img: /assets/img/GPU_acceleration.png
 share-img: /assets/img/GPU_acceleration.png
@@ -12,6 +12,7 @@ _The thumbnail image is created by chatGPT-4o_
 <br/>
 
 <br/>
+
 
 ### 1. loading relevent modules 
 
