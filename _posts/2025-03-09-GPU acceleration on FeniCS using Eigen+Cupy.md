@@ -275,7 +275,7 @@ for n in range(num_steps):
 end = time.time()
 print("Total GPU execution time:", end - start)
 ```
-
+<br/>
 ```
 # Step 1: Tentative velocity step
 b1 = assemble(L1)
@@ -295,7 +295,10 @@ p_.vector()[:] = cupy.asnumpy(cupyx.scipy.sparse.linalg.cg(A2_gpu, b2_gpu)[0])
 b3_gpu[:] = cupy.asarray(assemble(L3)[:])
 u_.vector()[:] = cupy.asnumpy(cupyx.scipy.sparse.linalg.cg(A3_gpu, b3_gpu)[0])
 ```
+<br/>
 
 ```cupyx.scipy.sparse.linalg.cg```: solving linear system using cg solver
+<br/>
 ```cupy.asnumpy```: convert the solution vector to CPU
+<br/>
 ```assemble```: assembling across domain to form the RHS vector at CPU
