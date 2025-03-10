@@ -4,7 +4,7 @@ title: GPU acceleration on FeniCS using Eigen backend
 cover-img: /assets/img/path.jpg
 thumbnail-img: /assets/img/GPU_acceleration.png
 share-img: /assets/img/GPU_acceleration.png
-tags: [HPC]
+tags: [HPC, GPU]
 ---
 
 _The thumbnail image is created by chatGPT-4o_
