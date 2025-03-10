@@ -2,8 +2,8 @@
 layout: post
 title: GPU acceleration on FeniCS using PETSc+GPUs
 cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/GPU_acceleration.png
-share-img: /assets/img/GPU_acceleration.png
+thumbnail-img: /assets/img/GPU_acceleration_petsc.png
+share-img: /assets/img/GPU_acceleration_petsc.png
 tags: [HPC, GPU]
 ---
 
