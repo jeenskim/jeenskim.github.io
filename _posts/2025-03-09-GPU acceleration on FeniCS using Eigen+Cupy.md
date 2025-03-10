@@ -311,7 +311,7 @@ u_.vector()[:] = cupy.asnumpy(cupyx.scipy.sparse.linalg.cg(A3_gpu, b3_gpu)[0])
 
 ```assemble```: assemble across domain to form the RHS vector using CPU
 
-
+<br/>
 ### 15. Results
 #### 15.1. # of Cells = 24,287
 - CPUs/iteration: 0.32sec
