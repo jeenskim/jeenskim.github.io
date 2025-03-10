@@ -226,3 +226,76 @@ b3_gpu = cupy.zeros_like(cupy.array(assemble(L3)[:]))
 
 ``` cupy.array ```: convert numpy array at CPU to cupy array at GPU
 
+
+### 14. Timestep integration
+
+```
+t = 0
+start = time.time()
+for n in range(num_steps):
+
+    start_timestep = time.time()
+
+    # Update current time
+    t += dt
+
+    # Step 1: Tentative velocity step
+    b1 = assemble(L1)
+    [bc.apply(b1) for bc in bcu]
+    b1_gpu = cupy.asarray(b1[:])
+    
+    u_.vector()[:] = cupy.asnumpy(cupyx.scipy.sparse.linalg.cg(A1_gpu, b1_gpu)[0])
+
+    # Step 2: Pressure correction step
+    b2 = assemble(L2)
+    [bc.apply(b2) for bc in bcp]
+    b2_gpu = cupy.asarray(b2[:])
+    
+    p_.vector()[:] = cupy.asnumpy(cupyx.scipy.sparse.linalg.cg(A2_gpu, b2_gpu)[0])
+
+    # Step 3: Velocity correction step
+    b3_gpu[:] = cupy.asarray(assemble(L3)[:])
+    u_.vector()[:] = cupy.asnumpy(cupyx.scipy.sparse.linalg.cg(A3_gpu, b3_gpu)[0])
+
+    # Save solution
+    xdmffile_u.write(u_, t)
+    xdmffile_p.write(p_, t)
+
+    # Update previous solution
+    u_n.assign(u_)
+    p_n.assign(p_)
+    # print('Time:', t)
+    # print('u max:', u_.vector().max())
+    # print('p max:', p_.vector().max())
+
+    end_timestep = time.time()
+    # print('GPU(s)/iteration', end_timestep-start_timestep)
+    print(n, end_timestep - start, end_timestep - start_timestep)
+
+end = time.time()
+print("Total GPU execution time:", end - start)
+```
+
+```
+# Step 1: Tentative velocity step
+b1 = assemble(L1)
+[bc.apply(b1) for bc in bcu]
+b1_gpu = cupy.asarray(b1[:])
+    
+u_.vector()[:] = cupy.asnumpy(cupyx.scipy.sparse.linalg.cg(A1_gpu, b1_gpu)[0])
+
+# Step 2: Pressure correction step
+b2 = assemble(L2)
+[bc.apply(b2) for bc in bcp]
+b2_gpu = cupy.asarray(b2[:])
+    
+p_.vector()[:] = cupy.asnumpy(cupyx.scipy.sparse.linalg.cg(A2_gpu, b2_gpu)[0])
+
+# Step 3: Velocity correction step
+b3_gpu[:] = cupy.asarray(assemble(L3)[:])
+u_.vector()[:] = cupy.asnumpy(cupyx.scipy.sparse.linalg.cg(A3_gpu, b3_gpu)[0])
+```
+
+```cupyx.scipy.sparse.linalg.cg```: solving linear system using cg solver
+```cupy.asnumpy```: convert the solution vector to CPU
+```assemble```: assembling across domain to form the RHS vector at CPU
