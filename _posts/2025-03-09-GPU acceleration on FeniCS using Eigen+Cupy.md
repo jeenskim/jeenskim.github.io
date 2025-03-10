@@ -43,6 +43,10 @@ with cupy.cuda.Device(0):
 parameters['linear_algebra_backend'] = 'Eigen'
 ```
 
+Cupy vs. Cupyx
+- Cupy: GPU version of Numpy
+- Cupyx: GPU version of Scipy
+
 <br/>
 
 
@@ -208,12 +212,17 @@ A2_gpu = cupyx.scipy.sparse.csr_matrix(tran2SparseMatrix(A2))
 A3_gpu = cupyx.scipy.sparse.csr_matrix(tran2SparseMatrix(A3))
 ```
 
-
+```cupyx.scipy.sparse.csr_matrix```: convert CSR matrix at CPU to CSR matrix at GPU
 
 <br/>
 
-# Allocate GPU memory for RHS vectors
+### 13. Allocate GPU memory for RHS vectors
+
+```
 b1_gpu = cupy.zeros_like(cupy.array(assemble(L1)[:]))
 b2_gpu = cupy.zeros_like(cupy.array(assemble(L2)[:]))
 b3_gpu = cupy.zeros_like(cupy.array(assemble(L3)[:]))
+```
+
+``` cupy.array ```: convert numpy array at CPU to cupy array at GPU
 
