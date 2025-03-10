@@ -55,6 +55,8 @@ def tran2SparseMatrix(A):
 ```
 
 ``` scipy.sparse.csr_matrix ``` : convert sparse matrix into the CSR(Compressed Sparse Row) matrix 
+- More efficient memory
+- Faster matrix-vector multiplication
 
 <br/>
 
