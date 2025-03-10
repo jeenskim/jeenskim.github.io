@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GPU acceleration on FeniCS (Backend: Eigen)
+title: GPU acceleration on FeniCS, Backend: Eigen
 cover-img: /assets/img/path.jpg
 thumbnail-img: /assets/img/GPU_acceleration.png
 share-img: /assets/img/GPU_acceleration.png
