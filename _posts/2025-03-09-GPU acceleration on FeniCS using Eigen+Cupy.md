@@ -309,4 +309,4 @@ u_.vector()[:] = cupy.asnumpy(cupyx.scipy.sparse.linalg.cg(A3_gpu, b3_gpu)[0])
 
 <br/>
 
-```assemble```: assembling across domain to form the RHS vector at CPU
+```assemble```: assemble across domain to form the RHS vector using CPU
