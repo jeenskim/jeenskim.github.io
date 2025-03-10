@@ -54,6 +54,8 @@ def tran2SparseMatrix(A):
     return sps.csr_matrix((val, col, row))
 ```
 
+``` scipy.sparse.csr_matrix ``` : convert sparse matrix into the CSR(Compressed Sparse Row) matrix 
+
 <br/>
 
 
@@ -185,4 +187,31 @@ A3 = assemble(a3)
 ```
 
 <br/>
+
+### 11. Create XDMF files for visualization output
+
+```
+xdmffile_u = XDMFFile('navier_GPU/velocity_dense.xdmf')
+xdmffile_p = XDMFFile('navier_GPU/pressure_dense.xdmf')
+```
+
+<br/>
+
+
+### 12. Convert assembled matrices to sparse format
+
+```
+A1_gpu = cupyx.scipy.sparse.csr_matrix(tran2SparseMatrix(A1))
+A2_gpu = cupyx.scipy.sparse.csr_matrix(tran2SparseMatrix(A2))
+A3_gpu = cupyx.scipy.sparse.csr_matrix(tran2SparseMatrix(A3))
+```
+
+
+
+<br/>
+
+# Allocate GPU memory for RHS vectors
+b1_gpu = cupy.zeros_like(cupy.array(assemble(L1)[:]))
+b2_gpu = cupy.zeros_like(cupy.array(assemble(L2)[:]))
+b3_gpu = cupy.zeros_like(cupy.array(assemble(L3)[:]))
 
