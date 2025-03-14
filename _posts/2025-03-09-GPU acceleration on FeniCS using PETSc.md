@@ -15,5 +15,13 @@ _The thumbnail image is created by chatGPT-4o_
 
 _Will be updated soon..._
 
-When solving a linear system in FEM simulation, 
-$1 + 1 = 2$
+Let's say we are working on FEM simulation using FeniCS and want to solve a linear system as follows:
+
+$Ax = b$.
+
+When trying to accelerate this with _'Eigen'_ linear algebra backend and Cupy, 
+
+The LHS matrix can be precomputed by using $assemble()$ and converted to CSR(Compact Sparse Row) format on a GPU.
+
+However, the RHS matrix, $b$, should be computed using $assemble()$ and boundary conditon and converted to CSR format at each time step using CPU. 
+This is becuase $assemble()$ function includes conducting integration on different meshes across domain and it is non-trivial to implement this function using CUDA kernel.
