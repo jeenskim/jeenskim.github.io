@@ -14,3 +14,6 @@ _The thumbnail image is created by chatGPT-4o_
 <br/>
 
 _Will be updated soon..._
+
+When solving a linear system in FEM simulation, 
+$1 + 1 = 2$
