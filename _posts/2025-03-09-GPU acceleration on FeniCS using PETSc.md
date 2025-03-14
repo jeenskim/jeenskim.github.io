@@ -27,4 +27,6 @@ However, the RHS vector, $b$, should be computed using $assemble()$ and boundary
 
 In addition, since Cupy doesn't support multi-GPUs in its basic setting, scaling up to larger problems can be difficult.
 
-
+<br/>
+On the other hand, _'PETSc'_ linear algebra backend in FeniCSX supports multi-GPUs setting and enables executing $assemble()$ function on GPUs.
+There is recent paper on this: (<https://www.sciencedirect.com/science/article/pii/S0167819123000571>)
