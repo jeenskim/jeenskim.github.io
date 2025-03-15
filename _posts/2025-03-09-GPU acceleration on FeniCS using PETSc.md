@@ -21,7 +21,7 @@ $Ax = b$.
 
 When trying to accelerate this with _'Eigen'_ linear algebra backend and Cupy, 
 
-The LHS matrix can be precomputed by using $assemble()$ and converted to CSR(Compact Sparse Row) format on a GPU.
+The LHS matrix, $A$, can be precomputed by using $assemble()$ and converted to CSR(Compact Sparse Row) format on a GPU.
 Here, $assemble()$ function discretizes PDEs following finite element principle.
 
 However, the RHS vector, $b$, should be computed using $assemble()$ and boundary conditons and converted to CSR format at each time step using CPU. This is becuase $assemble()$ function includes conducting integration on different meshes across domain and it is non-trivial to implement this function using CUDA kernel. As a result, this can cause a bottleneck in the whole process.
