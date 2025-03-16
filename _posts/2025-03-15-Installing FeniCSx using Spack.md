@@ -468,20 +468,29 @@ Compiled finite element Form.
 
 ---
 
-## `dolfinx.fem.create_matrix(a: Form, block_mode: BlockMode | None = None)→ MatrixCSR[source]'
-Create a sparse matrix that is compatible with a given bilinear form.
+## 'dolfinx.fem.petsc.create_matrix(a: Form, mat_type=None)→ Mat[source]'
+Create a PETSc matrix that is compatible with a bilinear form.
+
+> ### **Note**:
+> Due to subtle issues in the interaction between petsc4py memory management and the Python garbage collector, it is recommended that the method PETSc.Mat.destroy() is called on the returned object once the object is no longer required. Note that PETSc.Mat.destroy() is collective over the object’s MPI communicator.
 
 ### **Parameters**
-- **`a`** – Bilinear form to assemble.
-- **`block_mode`** – Block mode of the CSR matrix. If None, default is used.
+- **`a`** – A bilinear form.
+- **`mat_type`** – The PETSc matrix type (MatType).
 
 ### Returns:
-Assembled sparse matrix.
+A PETSc matrix with a layout that is compatible with a.
 
 ---
 
-## 'dolfinx.fem.create_vector(L: Form)→ Vector[source]'
-Create a Vector that is compatible with a given linear form
+## 'dolfinx.fem.petsc.create_vector(L: Form)→ Vec[source]'
+Create a PETSc vector that is compatible with a linear form.
+
+### **Parameters**
+- **`L`** – A linear form.
+
+### Returns:
+A PETSc vector with a layout that is compatible with L.
 
 ---
 
