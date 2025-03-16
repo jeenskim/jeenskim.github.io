@@ -388,14 +388,16 @@ Representation of Dirichlet boundary condition which is imposed on a linear syst
 > and not using this class initializer. This class is combined with different base classes  
 > that depend on the scalar type of the boundary condition.
 
----
-
 ### **Parameters**
 - **`value`** – Lifted boundary values function. It can be Function, array or constant values
 - **`dofs`** – Local indices of degrees of freedom in the function space to which the boundary condition applies.  
   - Expects an array of size `(number of dofs, 2)` if function space of the problem, `V`, is passed.  
   - Otherwise, assumes function space of the problem is the same as the function space of the boundary values function.
 - **`V`** – Function space of a problem to which boundary conditions are applied.
+- 
+
+### Returns:
+A representation of the boundary condition for modifying linear systems.
 
 ---
 <br/>
@@ -449,6 +451,7 @@ Given a combined bilinear and linear form, extract the left hand side (bilinear 
 Example:
 a = u*v*dx + f*v*dx a = lhs(a) -> u*v*dx
 
+---
 
 ## `dolfinx.fem.form(form: typing.Union[ufl.Form, typing.Iterable[ufl.Form]], dtype: npt.DTypeLike = <class 'numpy.float64'>, form_compiler_options: typing.Optional[dict] = None, jit_options: typing.Optional[dict] = None, entity_maps: typing.Optional[dict[Mesh, np.typing.NDArray[np.int32]]] = None)[source]'
 Create a Form or an array of Forms.
@@ -460,8 +463,42 @@ Create a Form or an array of Forms.
 - **`jit_options`** – See ffcx_jit.
 - **`entity_maps`** – If any trial functions, test functions, or coefficients in the form are not defined over the same mesh as the integration domain, entity_maps must be supplied. For each key (a mesh, different to the integration domain mesh) a map should be provided relating the entities in the integration domain mesh to the entities in the key mesh e.g. for a key-value pair (msh, emap) in entity_maps, emap[i] is the entity in msh corresponding to entity i in the integration domain mesh.
 
-### Returns
+### Returns:
 Compiled finite element Form.
+
+---
+
+## `dolfinx.fem.create_matrix(a: Form, block_mode: BlockMode | None = None)→ MatrixCSR[source]'
+Create a sparse matrix that is compatible with a given bilinear form.
+
+### **Parameters**
+- **`a`** – Bilinear form to assemble.
+- **`block_mode`** – Block mode of the CSR matrix. If None, default is used.
+
+### Returns:
+Assembled sparse matrix.
+
+---
+
+## `dolfinx.fem.petsc.assemble_matrix(A: Mat, a: Form, bcs: list[DirichletBC] = [], diagonal: float = 1.0, constants=None, coeffs=None)→ Mat'
+Assemble bilinear form into a matrix.
+
+The returned matrix is not finalised, i.e. ghost values are not accumulated.
+
+### **Note** 
+The returned matrix is not ‘assembled’, i.e. ghost contributions have not been communicated.
+
+### Parameters
+:
+a – Bilinear form to assembled into a matrix.
+bc – Dirichlet boundary conditions applied to the system.
+diagonal – Value to set on the matrix diagonal for Dirichlet boundary condition constrained degrees-of-freedom belonging to the same trial and test space.
+constants – Constants appearing the in the form.
+coeffs – Coefficients appearing the in the form.
+Returns
+:
+Matrix representing the bilinear form.
+
 
 
 ```
