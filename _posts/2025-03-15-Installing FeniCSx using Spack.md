@@ -27,7 +27,7 @@ spack add fenics-dolfinx+adios2 py-fenics-dolfinx cflags="-O3" fflags="-O3"
 spack install
 ```
 
-</br>
+<br/>
 
 ```
 python3.12 -m pip install --upgrade pip
@@ -35,7 +35,7 @@ spack add gmsh
 spack install gmsh
 ```
 
-</br>
+<br/>
 
 ### 2. Solve 2D Poisson equation
 
@@ -134,7 +134,7 @@ with io.XDMFFile(domain.comm, filename.with_suffix(".xdmf"), "w") as xdmf:
 
 ```
 
-</br>
+<br/>
 
 #### 2.2. Results
 
@@ -161,7 +161,7 @@ computation time = 21.489859342575073 sec
 Error_L2 : 5.03e-07
 Error_max : 6.11e-11
 ```
-</br>
+<br/>
 
 ### 3. Incompressible Navier-Stokes equation: flow around cylinder
 
@@ -548,7 +548,7 @@ if mesh.comm.rank == 0:
     plt.savefig("figures/pressure_comparison.png")
 ```
 
-</br>
+<br/>
 
 #### 3.1. Results
 
@@ -560,7 +560,7 @@ python NS_2Dcylinder.py
 Solving PDE: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 12800/12800 [09:06<00:00, 23.41it/s]
 ```
 
-</br>
+<br/>
 
 ```
 mpirun --oversubscribe -n 20 python NS_2Dcylinder.py
