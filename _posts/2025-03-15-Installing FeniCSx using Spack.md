@@ -426,8 +426,6 @@ L1 = form(rhs(F1))
 A1 = create_matrix(a1)
 b1 = create_vector(L1)
 
-
-
 a2 = form(dot(grad(p), grad(q)) * dx)
 L2 = form(-rho / k * dot(div(u_s), q) * dx)
 A2 = assemble_matrix(a2, bcs=bcp)
@@ -441,8 +439,32 @@ A3 = assemble_matrix(a3)
 A3.assemble()
 b3 = create_vector(L3)
 
+```
+
+## `ufl.lhs(form)'
+Get the left hand side.
+
+Given a combined bilinear and linear form, extract the left hand side (bilinear form part).
+
+Example:
+a = u*v*dx + f*v*dx a = lhs(a) -> u*v*dx
 
 
+## `dolfinx.fem.form(form: typing.Union[ufl.Form, typing.Iterable[ufl.Form]], dtype: npt.DTypeLike = <class 'numpy.float64'>, form_compiler_options: typing.Optional[dict] = None, jit_options: typing.Optional[dict] = None, entity_maps: typing.Optional[dict[Mesh, np.typing.NDArray[np.int32]]] = None)[source]'
+Create a Form or an array of Forms.
+
+### **Parameters**
+- **`form`** – A UFL form or list(s) of UFL forms.
+- **`dtype`** – Scalar type to use for the compiled form.
+- **`form_compiler_options`** – See ffcx_jit
+- **`jit_options`** – See ffcx_jit.
+- **`entity_maps`** – If any trial functions, test functions, or coefficients in the form are not defined over the same mesh as the integration domain, entity_maps must be supplied. For each key (a mesh, different to the integration domain mesh) a map should be provided relating the entities in the integration domain mesh to the entities in the key mesh e.g. for a key-value pair (msh, emap) in entity_maps, emap[i] is the entity in msh corresponding to entity i in the integration domain mesh.
+
+### Returns
+Compiled finite element Form.
+
+
+```
 # Solver for step 1
 solver1 = PETSc.KSP().create(mesh.comm)
 solver1.setOperators(A1)
