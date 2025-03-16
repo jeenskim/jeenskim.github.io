@@ -247,7 +247,7 @@ if mesh_comm.rank == model_rank:
     gmsh.model.setPhysicalName(1, obstacle_marker, "Obstacle")
     
     
-    
+
 # Create distance field from obstacle.
 # Add threshold of mesh sizes based on the distance field
 # LcMax -                  /--------
@@ -295,27 +295,28 @@ rho = Constant(mesh, PETSc.ScalarType(1))     # Density
 
 ```
 
+<br/>
 
-# `dolfinx.fem.Constant(domain, c: ndarray | Sequence | floating | complexfloating)`
+## `dolfinx.fem.Constant(domain, c: ndarray | Sequence | floating | complexfloating)`
 
 **Bases:** `Constant`
 
 A constant with respect to a domain.
 
-## Parameters:
+### Parameters:
 - **`domain`** – DOLFINx or UFL mesh  
 - **`c`** – Value of the constant.
 
 ---
 
-### Properties
+#### Properties
 | Property | Description |
 |----------|-------------|
 | **`dtype`** | `dtype` |
 | **`value`** | The value of the constant |
  
 
-
+<br/>
 
 ```
 
