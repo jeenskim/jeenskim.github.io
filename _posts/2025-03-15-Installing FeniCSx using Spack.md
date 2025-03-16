@@ -140,6 +140,11 @@ Error_L2 : 5.03e-07
 Error_max : 6.44e-11
 ```
 
+
+```
+python poisson.py
+```
+
 ```
 the number of MPI ranks: 1
 computation time = 21.489859342575073 sec
