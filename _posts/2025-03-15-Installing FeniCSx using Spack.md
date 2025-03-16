@@ -380,9 +380,31 @@ bcu = [bcu_inflow, bcu_obstacle, bcu_walls]
 # Outlet
 bcp_outlet = dirichletbc(PETSc.ScalarType(0), locate_dofs_topological(Q, fdim, ft.find(outlet_marker)), Q)
 bcp = [bcp_outlet]
+```
+
+## `dolfinx.fem.DirichletBC(bc)`
+
+**Bases:** `object`
+
+Representation of Dirichlet boundary condition which is imposed on a linear system.
+
+> **Note:**  
+> Dirichlet boundary conditions should normally be constructed using `fem.dirichletbc()`  
+> and not using this class initializer. This class is combined with different base classes  
+> that depend on the scalar type of the boundary condition.
+
+---
+
+### **Parameters**
+- **`value`** – Lifted boundary values function.
+- **`dofs`** – Local indices of degrees of freedom in the function space to which the boundary condition applies.  
+  - Expects an array of size `(number of dofs, 2)` if function space of the problem, `V`, is passed.  
+  - Otherwise, assumes function space of the problem is the same as the function space of the boundary values function.
+- **`V`** – Function space of a problem to which boundary conditions are applied.
 
 
 
+```
 u = TrialFunction(V)
 v = TestFunction(V)
 u_ = Function(V)
