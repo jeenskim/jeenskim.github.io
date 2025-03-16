@@ -27,6 +27,8 @@ spack add fenics-dolfinx+adios2 py-fenics-dolfinx cflags="-O3" fflags="-O3"
 spack install
 ```
 
+</br>
+
 ### 2. Solve 2D Poisson equation
 
 ```
@@ -122,6 +124,7 @@ with io.XDMFFile(domain.comm, filename.with_suffix(".xdmf"), "w") as xdmf:
 
 ```
 
+</br>
 
 ### 3. Excute with MPI
 
