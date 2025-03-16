@@ -166,6 +166,8 @@ Error_max : 6.11e-11
 ![My Image](/assets/img/poisson.png)
 
 
+<br/>
+
 ### 3. Incompressible Navier-Stokes equation: flow around cylinder
 
 #### 3.1. Code 
