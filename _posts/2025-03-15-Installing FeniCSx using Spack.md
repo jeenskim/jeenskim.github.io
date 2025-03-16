@@ -310,12 +310,6 @@ A constant with respect to a domain.
 - **`c`** – Value of the constant.
 
 ---
-
-#### Properties
-| Property | Description |
-|----------|-------------|
-| **`dtype`** | `dtype` |
-| **`value`** | The value of the constant |
  
 
 <br/>
@@ -350,6 +344,7 @@ Create a UFL compatible element using Basix.
 ### Returns:
 UFL finite element.
 
+---
 <br/>
 
 ```
@@ -402,7 +397,8 @@ Representation of Dirichlet boundary condition which is imposed on a linear syst
   - Otherwise, assumes function space of the problem is the same as the function space of the boundary values function.
 - **`V`** – Function space of a problem to which boundary conditions are applied.
 
-
+---
+<br/>
 
 ```
 u = TrialFunction(V)
