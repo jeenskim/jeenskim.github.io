@@ -538,8 +538,13 @@ solver3.setOperators(A3)
 solver3.setType(PETSc.KSP.Type.CG)
 pc3 = solver3.getPC()
 pc3.setType(PETSc.PC.Type.SOR)
+```
 
 
+### Krylov Subspace Solver (KSP) & Preconditioner setting
+
+
+```
 n = -FacetNormal(mesh)  # Normal pointing out of obstacle
 dObs = Measure("ds", domain=mesh, subdomain_data=ft, subdomain_id=obstacle_marker)
 u_t = inner(as_vector((n[1], -n[0])), u_)
