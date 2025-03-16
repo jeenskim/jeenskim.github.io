@@ -346,7 +346,7 @@ Create a UFL compatible element using Basix.
 - **`dtype`** – Floating point data type.
 
 ### Returns:
-A finite element.
+UFL finite element.
 
 <br/>
 
