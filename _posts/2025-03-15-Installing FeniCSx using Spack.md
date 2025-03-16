@@ -165,8 +165,6 @@ Error_max : 6.11e-11
 
 ### 3. Incompressible Navier-Stokes equation: flow around cylinder
 
-</br>
-
 #### 3.1. Code 
 
 ```
