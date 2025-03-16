@@ -35,7 +35,7 @@ spack add gmsh
 spack install gmsh
 ```
 
-<br/>
+</br>
 
 ### 2. Solve 2D Poisson equation
 
