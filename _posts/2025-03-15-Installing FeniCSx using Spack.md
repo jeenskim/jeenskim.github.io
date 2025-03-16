@@ -391,7 +391,7 @@ Representation of Dirichlet boundary condition which is imposed on a linear syst
 ---
 
 ### **Parameters**
-- **`value`** – Lifted boundary values function.
+- **`value`** – Lifted boundary values function. It can be Function, array or constant values
 - **`dofs`** – Local indices of degrees of freedom in the function space to which the boundary condition applies.  
   - Expects an array of size `(number of dofs, 2)` if function space of the problem, `V`, is passed.  
   - Otherwise, assumes function space of the problem is the same as the function space of the boundary values function.
