@@ -480,23 +480,27 @@ Assembled sparse matrix.
 
 ---
 
+## 'dolfinx.fem.create_vector(L: Form)→ Vector[source]'
+Create a Vector that is compatible with a given linear form
+
+---
+
 ## `dolfinx.fem.petsc.assemble_matrix(A: Mat, a: Form, bcs: list[DirichletBC] = [], diagonal: float = 1.0, constants=None, coeffs=None)→ Mat'
 Assemble bilinear form into a matrix.
 
 The returned matrix is not finalised, i.e. ghost values are not accumulated.
 
-### **Note** 
-The returned matrix is not ‘assembled’, i.e. ghost contributions have not been communicated.
+> ### **Note**:
+> The returned matrix is not ‘assembled’, i.e. ghost contributions have not been communicated. Should be followd by $assemble()$.
 
-### Parameters
-:
-a – Bilinear form to assembled into a matrix.
-bc – Dirichlet boundary conditions applied to the system.
-diagonal – Value to set on the matrix diagonal for Dirichlet boundary condition constrained degrees-of-freedom belonging to the same trial and test space.
-constants – Constants appearing the in the form.
-coeffs – Coefficients appearing the in the form.
-Returns
-:
+### **Parameters**
+- **`a`** – Bilinear form to assembled into a matrix.
+- **`bc`** – Dirichlet boundary conditions applied to the system.
+- **`diagonal`** – Value to set on the matrix diagonal for Dirichlet boundary condition constrained degrees-of-freedom belonging to the same trial and test space.
+- **`constants`** – Constants appearing the in the form.
+- **`coeffs`** – Coefficients appearing the in the form.
+
+### Returns:
 Matrix representing the bilinear form.
 
 
