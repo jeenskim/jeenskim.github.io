@@ -443,7 +443,7 @@ b3 = create_vector(L3)
 
 ```
 
-## `ufl.lhs(form)'
+## `ufl.lhs(form)`
 Get the left hand side.
 
 Given a combined bilinear and linear form, extract the left hand side (bilinear form part).
@@ -511,6 +511,8 @@ The returned matrix is not finalised, i.e. ghost values are not accumulated.
 
 ### Returns:
 Matrix representing the bilinear form.
+
+---
 
 
 
