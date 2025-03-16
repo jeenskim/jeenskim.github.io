@@ -293,6 +293,31 @@ k = Constant(mesh, PETSc.ScalarType(dt))
 mu = Constant(mesh, PETSc.ScalarType(0.001))  # Dynamic viscosity
 rho = Constant(mesh, PETSc.ScalarType(1))     # Density
 
+```
+
+
+# `dolfinx.fem.Constant(domain, c: ndarray | Sequence | floating | complexfloating)`
+
+**Bases:** `Constant`
+
+A constant with respect to a domain.
+
+## Parameters:
+- **`domain`** – DOLFINx or UFL mesh  
+- **`c`** – Value of the constant.
+
+---
+
+### Properties
+| Property | Description |
+|----------|-------------|
+| **`dtype`** | `dtype` |
+| **`value`** | The value of the constant |
+ 
+
+
+
+```
 
 v_cg2 = element("Lagrange", mesh.topology.cell_name(), 2, shape=(mesh.geometry.dim, ))
 s_cg1 = element("Lagrange", mesh.topology.cell_name(), 1)
