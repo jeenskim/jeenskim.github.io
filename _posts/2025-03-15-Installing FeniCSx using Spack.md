@@ -453,7 +453,7 @@ a = u*v*dx + f*v*dx a = lhs(a) -> u*v*dx
 
 ---
 
-## `dolfinx.fem.form(form: typing.Union[ufl.Form, typing.Iterable[ufl.Form]], dtype: npt.DTypeLike = <class 'numpy.float64'>, form_compiler_options: typing.Optional[dict] = None, jit_options: typing.Optional[dict] = None, entity_maps: typing.Optional[dict[Mesh, np.typing.NDArray[np.int32]]] = None)[source]'
+## `dolfinx.fem.form(form: typing.Union[ufl.Form, typing.Iterable[ufl.Form]], dtype: npt.DTypeLike = <class 'numpy.float64'>, form_compiler_options: typing.Optional[dict] = None, jit_options: typing.Optional[dict] = None, entity_maps: typing.Optional[dict[Mesh, np.typing.NDArray[np.int32]]] = None)[source]`
 Create a Form or an array of Forms.
 
 ### **Parameters**
@@ -468,7 +468,7 @@ Compiled finite element Form.
 
 ---
 
-## 'dolfinx.fem.petsc.create_matrix(a: Form, mat_type=None)→ Mat[source]'
+## `dolfinx.fem.petsc.create_matrix(a: Form, mat_type=None)→ Mat[source]`
 Create a PETSc matrix that is compatible with a bilinear form.
 
 > ### **Note**:
@@ -483,7 +483,7 @@ A PETSc matrix with a layout that is compatible with a.
 
 ---
 
-## 'dolfinx.fem.petsc.create_vector(L: Form)→ Vec[source]'
+## `dolfinx.fem.petsc.create_vector(L: Form)→ Vec[source]`
 Create a PETSc vector that is compatible with a linear form.
 
 ### **Parameters**
@@ -494,7 +494,7 @@ A PETSc vector with a layout that is compatible with L.
 
 ---
 
-## `dolfinx.fem.petsc.assemble_matrix(A: Mat, a: Form, bcs: list[DirichletBC] = [], diagonal: float = 1.0, constants=None, coeffs=None)→ Mat'
+## `dolfinx.fem.petsc.assemble_matrix(A: Mat, a: Form, bcs: list[DirichletBC] = [], diagonal: float = 1.0, constants=None, coeffs=None)→ Mat`
 Assemble bilinear form into a matrix.
 
 The returned matrix is not finalised, i.e. ghost values are not accumulated.
