@@ -29,6 +29,12 @@ spack install
 
 </br>
 
+```
+python3.12 -m pip install --upgrade pip
+spack add gmsh
+spack install gmsh
+```
+
 ### 2. Solve 2D Poisson equation
 
 ```
