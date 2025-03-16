@@ -8,7 +8,7 @@ tags: [HPC, GPU]
 ---
 
 _The thumbnail image is created by chatGPT-4o_
-###### This content explains how to to install FeniCSx using Spack on HPC systems (ALCF Polaris).
+###### This content explains how to to install FeniCSx using Spack on HPC systems (ALCF Polaris) and is based on the FeniCSx tutorial (<https://jsdokken.com/dolfinx-tutorial/index.html>).
 <br/>
 
 <br/>
