@@ -543,6 +543,13 @@ pc3.setType(PETSc.PC.Type.SOR)
 
 ### Krylov Subspace Solver (KSP) & Preconditioner setting
 
+- **`PETSc.KSP().create(mesh.comm)`**
+- **`solver.setOperators(A)`**
+- **`solver.setType(PETSc.KSP.Type.BCGS)`**
+
+- **`solver.getPC()`**
+- **`solver.getPC().setType(PETSc.PC.Type.`**
+
 
 ```
 n = -FacetNormal(mesh)  # Normal pointing out of obstacle
