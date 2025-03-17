@@ -894,7 +894,69 @@ $b \gets b - \text{scale} \cdot A_j (g_j - x0_j)$
 
 where j is a block (nest) index. For a non-blocked problem j = 0. The boundary conditions bcs are on the trial spaces V_j. The forms in [a] must have the same test space as L (from which b was built), but the trial space may differ. If x0 is not supplied, then it is treated as zero.
 
+---
 
+
+## **`ghostUpdate(addv=None, mode=None)`**
+Update ghosted vector entries.
+
+Neighborwise collective.
+
+### **Parameters**
+- **`addv`** (InsertModeSpec) – Insertion mode.
+- **`mode`** (ScatterModeSpec) – Scatter mode.
+
+### Return type:
+None
+
+---
+
+## **`dolfinx.fem.petsc.set_bc(b: Vec, bcs: list[DirichletBC], x0: Vec | None = None, alpha: float = 1)→ None[source]`**
+Apply the function dolfinx.fem.set_bc() to a PETSc Vector.
+
+---
+
+## **`dolfinx.fem.set_bc(b: ndarray, bcs: list[DirichletBC], x0: ndarray | None = None, scale: float = 1)→ None[source]`**
+Insert boundary condition values into vector.
+
+---
+
+## **`petsc4py.PETSc.KSP.solve(b, x)`**
+Solve the linear system.
+
+Collective.
+
+### **Parameters**
+- **`b (Vec)`** – Right hand side vector.
+- **`x (Vec)`** – Solution vector.
+
+### Return type:
+None
+
+> **Note**
+> If one uses setDM then x or b need not be passed. Use getSolution to access the solution in this case.
+
+> The operator is specified with setOperators.
+
+> solve will normally return without generating an error regardless of whether the linear system was solved or if constructing the preconditioner failed. Call getConvergedReason to determine if the solver converged or failed and why. The option -ksp_error_if_not_converged or function setErrorIfNotConverged will cause solve to error as soon as an error occurs in the linear solver. In inner solves, DIVERGED_MAX_IT is not treated as an error because when using nested solvers it may be fine that inner solvers in the preconditioner do not converge during the solution process.
+
+> The number of iterations can be obtained from its.
+
+> If you provide a matrix that has a Mat.setNullSpace and Mat.setTransposeNullSpace this will use that information to solve singular systems in the least squares sense with a norm minimizing solution.
+
+> Ax = b where b = bₚ + bₜ where bₜ is not in the range of A (and hence by the fundamental theorem of linear algebra is in the nullspace(Aᵀ), see Mat.setNullSpace.
+
+> KSP first removes bₜ producing the linear system Ax = bₚ (which has multiple solutions) and solves this to find the ∥x∥ minimizing solution (and hence it finds the solution x orthogonal to the nullspace(A). The algorithm is simply in each iteration of the Krylov method we remove the nullspace(A) from the search direction thus the solution which is a linear combination of the search directions has no component in the nullspace(A).
+
+> We recommend always using Type.GMRES for such singular systems. If nullspace(A) = nullspace(Aᵀ) (note symmetric matrices always satisfy this property) then both left and right preconditioning will work If nullspace(A) != nullspace(Aᵀ) then left preconditioning will work but right preconditioning may not work (or it may).
+
+> If using a direct method (e.g., via the KSP solver Type.PREONLY and a preconditioner such as PC.Type.LU or PC.Type.ILU, then its=1. See setTolerances for more details.
+
+> ### Understanding Convergence
+
+> The routines setMonitor and computeEigenvalues provide information on additional options to monitor convergence and print eigenvalue information.
+
+---
 
 
 ```
