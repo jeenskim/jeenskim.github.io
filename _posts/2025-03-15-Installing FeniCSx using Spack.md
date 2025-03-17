@@ -4,7 +4,7 @@ title: How to install FeniCSx using Spack
 cover-img: /assets/img/path.jpg
 thumbnail-img: /assets/img/Fenicsx-spack.png
 share-img: /assets/img/Fenicsx-spack.png
-tags: [HPC, GPU]
+tags: [HPC, GPU, FeniCSx]
 ---
 
 _The thumbnail image is created by chatGPT-4o_
@@ -933,7 +933,7 @@ Collective.
 ### Return type:
 None
 
-> **Note**
+> ### **Note**
 > If one uses setDM then x or b need not be passed. Use getSolution to access the solution in this case.
 
 > The operator is specified with setOperators.
