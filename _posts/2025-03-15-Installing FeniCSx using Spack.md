@@ -562,8 +562,6 @@ pc3.setType(PETSc.PC.Type.SOR)
 
 This object handles the linear solves in PETSc, including direct solvers that do not use Krylov accelerators.
 
----
-
 > ### **Notes**
 > When a **direct solver** is used without a Krylov solver, the `KSP` object is still utilized.  
 > In this case, `Type.PREONLY` is set, meaning **only the application of the preconditioner** is used as the linear solver.
@@ -582,6 +580,99 @@ Collective.
 Self
 
 ---
+
+
+## **`setOperators(A=None, P=None)`**
+Set matrix associated with the linear system.
+
+Collective.
+
+Set the matrix associated with the linear system and a (possibly) different one from which the preconditioner will be built.
+
+### **Paramters**:
+- **`A(Mat|None)`**: Matrix that defines the linear system.
+- **`P(Mat|None)`**: Matrix to be used in constructing the preconditioner, usually the same as A
+  
+### Returns:
+None
+
+---
+
+## **`setType(ksp_type)`**
+Build the KSP data structure for a particular Type.
+
+Logically collective.
+
+### **Paramters**:
+- **`ksp_type (Type | str)`**: KSP Type object
+  
+### Returns:
+None
+
+---
+
+## **`getPC()`**
+Return the preconditioner.
+
+Not collective.
+
+### Returns:
+PC
+
+---
+
+
+## `petsc4py.PETSc.PC`
+
+### **Class**: `petsc4py.PETSc.PC`
+**Bases**: `Object`
+
+### **Overview**
+Preconditioners.
+
+PC is described in the PETSc manual. Calling the PC with a vector as an argument will apply the preconditioner as shown in the example below.
+
+---
+
+## **`setType(pc_type)`**
+Set the preconditioner type.
+
+Collective.
+
+### **Paramters**:
+- **`pc_type (Type | str)`**: The preconditioner type.
+
+### Returns:
+None
+
+---
+
+## **`setType(pc_type)`**
+Set the preconditioner type.
+
+Collective.
+
+### **Paramters**:
+- **`pc_type (Type | str)`**: The preconditioner type.
+
+### Returns:
+None
+
+---
+
+## **`setHYPREType(hypretype)`**
+Set the Type.HYPRE type.
+
+Collective.
+
+### **Paramters**:
+- **`hypretype (str)`**: The name of the type, one of "euclid", "pilut", "parasails", "boomeramg", "ams", "ads"
+
+### Returns:
+None
+
+---
+
 
 
 
