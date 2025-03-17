@@ -550,7 +550,7 @@ pc3.setType(PETSc.PC.Type.SOR)
 - **`solver.getPC()`**
 - **`solver.getPC().setType(PETSc.PC.Type.`**
 
-
+<br/>
 
 ## `petsc4py.PETSc.KSP`
 
@@ -674,8 +674,7 @@ None
 
 ---
 
-
-
+<br/>
 
 ```
 n = -FacetNormal(mesh)  # Normal pointing out of obstacle
@@ -688,7 +687,26 @@ if mesh.comm.rank == 0:
     C_L = np.zeros(num_steps, dtype=PETSc.ScalarType)
     t_u = np.zeros(num_steps, dtype=np.float64)
     t_p = np.zeros(num_steps, dtype=np.float64)
-    
+
+```
+
+## **`ufl.classes.FacetNormal(domain)`**
+The outwards pointing normal vector of the current facet.
+
+---
+
+
+## **`ufl.Measure(integral_type, domain=None, subdomain_id='everywhere', metadata=None, subdomain_data=None)[source]¶`**
+
+Representation of an integration measure.
+
+The Measure object holds information about integration properties to be transferred to a Form on multiplication with a scalar expression.
+
+---
+
+
+```
+
     
 tree = bb_tree(mesh, mesh.geometry.dim)
 points = np.array([[0.15, 0.2, 0], [0.25, 0.2, 0]])
@@ -699,7 +717,10 @@ back_cells = colliding_cells.links(1)
 if mesh.comm.rank == 0:
     p_diff = np.zeros(num_steps, dtype=PETSc.ScalarType)
     
+
     
+
+
 
 
 from pathlib import Path
