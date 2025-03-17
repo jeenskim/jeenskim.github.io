@@ -309,7 +309,7 @@ A constant with respect to a domain.
 - **`domain`** – DOLFINx or UFL mesh  
 - **`c`** – Value of the constant.
 
----
+--------------------------------------------------
  
 
 <br/>
