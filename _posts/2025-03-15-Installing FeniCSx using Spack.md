@@ -959,6 +959,53 @@ None
 ---
 
 
+## **`dolfinx.la.Vector.scatter_forward()→ None`**
+Update ghost entries.
+
+---
+
+
+## **`petsc4py.PETSc.Vec.axpy(alpha, x)`**
+Compute and store y = ɑ·x + y.
+
+Logically collective.
+
+### **Parameters**
+- **`alpha (Scalar)`** – Scale factor.
+- **`x (Vec)`** – Input vector.
+
+### Return type:
+None
+
+---
+
+## **`dolfinx.fem.assemble_scalar(M: Form, constants=None, coeffs=None)[source]`**
+Assemble functional. The returned value is local and not accumulated across processes.
+
+### **Parameters**
+- **`M`** – The functional to compute.
+- **`constants`** – Constants that appear in the form. If not provided, any required constants will be computed.
+- **`coeffs`** – Coefficients that appear in the form. If not provided, any required coefficients will be computed.
+
+### Returns:
+The computed scalar on the calling rank.
+Note
+
+> **Note**
+> Passing constants and coefficients is a performance optimisation for when a form is assembled multiple times and when (some) constants and coefficients are unchanged.
+
+> To compute the functional value on the whole domain, the output of this function is typically summed across all MPI ranks.
+
+---
+
+## **`dolfinx.fem.eval(x: Buffer | _SupportsArray[dtype[Any]] | _NestedSequence[_SupportsArray[dtype[Any]]] | bool | int | float | complex | str | bytes | _NestedSequence[bool | int | float | complex | str | bytes], cells: Buffer | _SupportsArray[dtype[Any]] | _NestedSequence[_SupportsArray[dtype[Any]]] | bool | int | float | complex | str | bytes | _NestedSequence[bool | int | float | complex | str | bytes], u=None)→ ndarray[source]`**
+Evaluate Function at points x.
+
+Points where x has shape (num_points, 3), and cells has shape (num_points,) and cell[i] is the index of the cell containing point x[i]. If the cell index is negative the point is ignored.
+
+---
+
+
 ```
 if mesh.comm.rank == 0:
     if not os.path.exists("figures"):
