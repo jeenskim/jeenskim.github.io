@@ -880,6 +880,23 @@ Context manager yielding the vector in local (ghosted) form.
 ---
 
 
+## **`dolfinx.fem.petsc.apply_lifting(b: Vec, a: list[Form], bcs: list[list[DirichletBC]], x0: list[Vec] = [], alpha: float = 1, constants=None, coeffs=None)→ None[source]`**
+Apply the function dolfinx.fem.apply_lifting() to a PETSc Vector.
+
+---
+
+## **`dolfinx.fem.apply_lifting(b: ndarray, a: list[Form], bcs: list[list[DirichletBC]], x0: list[ndarray] | None = None, alpha: float = 1, constants=None, coeffs=None)→ None[source]`**
+Modify RHS vector b for lifting of Dirichlet boundary conditions.
+
+It modifies b such that:
+
+$b \gets b - \text{scale} \cdot A_j (g_j - x0_j)$
+
+where j is a block (nest) index. For a non-blocked problem j = 0. The boundary conditions bcs are on the trial spaces V_j. The forms in [a] must have the same test space as L (from which b was built), but the trial space may differ. If x0 is not supplied, then it is treated as zero.
+
+
+
+
 ```
 if mesh.comm.rank == 0:
     if not os.path.exists("figures"):
