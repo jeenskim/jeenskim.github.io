@@ -621,6 +621,7 @@ PC
 
 ---
 
+<br/>
 
 ## `petsc4py.PETSc.PC`
 
@@ -666,7 +667,7 @@ Set the Type.HYPRE type.
 Collective.
 
 ### **Paramters**:
-- **`hypretype (str)`**: The name of the type, one of "euclid", "pilut", "parasails", "boomeramg", "ams", "ads"
+- **`hypretype (str)`**: The name of the type, one of **"euclid"**, **"pilut"**, **"parasails"**, **"boomeramg"**, **"ams"**, **"ads"**
 
 ### Returns:
 None
