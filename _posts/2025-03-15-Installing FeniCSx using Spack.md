@@ -867,10 +867,20 @@ for i in range(num_steps):
 progress.close()
 vtx_u.close()
 vtx_p.close()
+```
+
+## **`petsc4py.PETSc.localForm()`**
+Return a context manager for viewing ghost vectors in local form.
+
+Logically collective.
+
+### Returns:
+Context manager yielding the vector in local (ghosted) form.
+
+---
 
 
-
-
+```
 if mesh.comm.rank == 0:
     if not os.path.exists("figures"):
         os.mkdir("figures")
