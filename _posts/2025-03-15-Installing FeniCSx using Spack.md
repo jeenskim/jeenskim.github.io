@@ -447,6 +447,7 @@ b3 = create_vector(L3)
 Take the inner product of a and b.
 
 The complex conjugate of the second argument is taken.
+
 ---
 
 
@@ -725,11 +726,57 @@ if mesh.comm.rank == 0:
     p_diff = np.zeros(num_steps, dtype=PETSc.ScalarType)
     
 
-    
+```
+
+## **`dolfinx.geometry.bb_tree(mesh: Mesh, dim: int, entities: Optional[npt.NDArray[np.int32]] = None, padding: float = 0.0)→ BoundingBoxTree[source]`**
+Create a bounding box tree for use in collision detection.
+
+### **Paramters**:
+- **`mesh`**: The mesh.
+- **`dim`**: Dimension of the mesh entities to build bounding box for.
+- **`entities`**: List of entity indices (local to process). If not supplied, all owned and ghosted entities are used.
+- **`padding`**: Padding for each bounding box. 
 
 
+### Returns:
+Bounding box tree.
+
+---
+
+## **`dolfinx.geometry.compute_collisions_points(tree: BoundingBoxTree, x: ndarray[Any, dtype[floating]])→ AdjacencyList_int32`**
+Compute collisions between points and leaf bounding boxes.
+
+Bounding boxes can overlap, therefore points can collide with more than one box.
+
+### **Paramters**:
+- **`tree`**: Bounding box tree
+- **`x`**: Points
+
+### Returns:
+For each point, the bounding box leaves that collide with the point.
+
+---
+
+## **`dolfinx.geometry.compute_colliding_cells(mesh: Mesh, candidates: AdjacencyList_int32, x: npt.NDArray[np.floating])`**
+From a mesh, find which cells collide with a set of points.
+
+### **Paramters**:
+- **`mesh`**: The mesh
+- **`candidate_cells`**: Adjacency list of candidate colliding cells for the ith point in **`x`**.
+- **`points`**: The points to check for collision
+
+### Returns:
+Adjacency list where the ith node is the list of entities that collide with the ith point.
+
+---
+
+## **`links`**
+Links (edges) of a node
+
+---
 
 
+```
 from pathlib import Path
 folder = Path("results")
 folder.mkdir(exist_ok=True, parents=True)
