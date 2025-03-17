@@ -551,6 +551,40 @@ pc3.setType(PETSc.PC.Type.SOR)
 - **`solver.getPC().setType(PETSc.PC.Type.`**
 
 
+
+## `petsc4py.PETSc.KSP`
+
+### **Class**: `petsc4py.PETSc.KSP`
+**Bases**: `Object`
+
+### **Overview**
+`KSP` is an abstract PETSc object that manages all Krylov methods.
+
+This object handles the linear solves in PETSc, including direct solvers that do not use Krylov accelerators.
+
+---
+
+> ### **Notes**
+> When a **direct solver** is used without a Krylov solver, the `KSP` object is still utilized.  
+> In this case, `Type.PREONLY` is set, meaning **only the application of the preconditioner** is used as the linear solver.
+
+---
+
+## **`create(comm=None)`**
+Create the KSP context.
+
+Collective.
+
+### **Paramters**:
+- **`comm(Comm|None)`**
+
+### Returns:
+Self
+
+---
+
+
+
 ```
 n = -FacetNormal(mesh)  # Normal pointing out of obstacle
 dObs = Measure("ds", domain=mesh, subdomain_data=ft, subdomain_id=obstacle_marker)
