@@ -443,6 +443,13 @@ b3 = create_vector(L3)
 
 ```
 
+## `ufl.inner(a, b)[source]`
+Take the inner product of a and b.
+
+The complex conjugate of the second argument is taken.
+---
+
+
 ## `ufl.lhs(form)`
 Get the left hand side.
 
