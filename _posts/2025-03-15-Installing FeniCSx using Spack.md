@@ -29,6 +29,7 @@ spack add py-pip
 spack install
 ```
 
+For NVIDIA A100 GPU, `cuda_arc = 80`
 Information about cuda_arc : (<https://arnon.dk/matching-sm-architectures-arch-and-gencode-for-various-nvidia-cards/>)
 
 <br/>
