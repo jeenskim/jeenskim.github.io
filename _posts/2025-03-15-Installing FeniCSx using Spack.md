@@ -24,15 +24,20 @@ git clone https://github.com/spack/spack.git
 spack env create fenicsx-env
 spack env activate fenicsx-env
 spack add fenics-dolfinx+adios2 py-fenics-dolfinx cflags="-O3" fflags="-O3"
+spack add py-torch+cuda cuda_arc=80
+spack add py-pip
 spack install
 ```
+
+Information about cuda_arc : (<https://arnon.dk/matching-sm-architectures-arch-and-gencode-for-various-nvidia-cards/>)
 
 <br/>
 
 ```
-python3.12 -m pip install --upgrade pip
 spack add gmsh
 spack install gmsh
+
+pip install gmsh
 ```
 
 <br/>
