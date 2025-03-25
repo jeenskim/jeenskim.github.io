@@ -33,14 +33,19 @@ For one possible way to accelerate this simulation using GPU, this `Assemble` pr
 On the other hand, for solving a lienar system with a sparse matrix, many linear algebra backends support GPU acceleration. For example, CuPy converts assembled $A$ and $b$ to CSR(Compact Sparse Row) format on a GPU and solves a sparse linear system.
 
 ```
+A1_gpu = cupyx.scipy.sparse.csr_matrix(tran2SparseMatrix(A1))
 
+b1_gpu = cupy.zeros_like(cupy.array(assemble(L1)[:]))
+b2_gpu = cupy.zeros_like(cupy.array(assemble(L2)[:]))
+b3_gpu = cupy.zeros_like(cupy.array(assemble(L3)[:]))
+
+b1 = assemble(L1)
+[bc.apply(b1) for bc in bcu]
+b1_gpu = cupy.asarray(b1[:])
+    
+u_.vector()[:] = cupy.asnumpy(cupyx.scipy.sparse.linalg.cg(A1_gpu, b1_gpu)[0])
 ```
 
-However, since CuPy doesn't support multi-GPUs in its basic setting, scaling up to larger problems can be difficult. 
+One limitation of CuPy is that it doesn't support multi-GPUs in its basic setting, so scaling up to larger problems can be difficult.
 
-<br/>
-On the other hand, _'PETSc'_ linear algebra backend in FeniCSX supports multi-GPUs setting and enables executing $assemble()$ function on GPUs.
-There is recent paper on this: 
-
-(<https://www.sciencedirect.com/science/article/pii/S0167819123000571>)
-(<https://www.youtube.com/watch?v=HV8zgxN9SFI>)
+On the other hand, PETSc support multi-GPUs and it is better to use PETSc for large scale problems. In addition, PETSc provides different types of preconditioners for linear solvers.
