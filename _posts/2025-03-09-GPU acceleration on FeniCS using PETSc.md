@@ -32,6 +32,10 @@ For one possible way to accelerate this simulation using GPU, this `Assemble` pr
 
 On the other hand, for solving a lienar system with a sparse matrix, many linear algebra backends support GPU acceleration. For example, CuPy converts assembled $A$ and $b$ to CSR(Compact Sparse Row) format on a GPU and solves a sparse linear system.
 
+```
+
+```
+
 However, since CuPy doesn't support multi-GPUs in its basic setting, scaling up to larger problems can be difficult. 
 
 <br/>
