@@ -17,16 +17,16 @@ _Will be updated soon..._
 
 Let's say we are working on FEM simulation and want to get solution field at the next timestep. 
 This process includes two steps:
-1) ''Assemble''
+1) `Assemble`
 2) Solving linear system, $Ax = b$
 
-Here, ''Assemble'' computes element matrix $A_e$ and element vector $b_e$ for each element, implements boundary conditions for $A_e$ & $b_e$, and constructs global matrix $A$ and global vector $b$. 
+Here, `Assemble` computes element matrix $A_e$ and element vector $b_e$ for each element, implements boundary conditions for $A_e$ & $b_e$, and constructs global matrix $A$ and global vector $b$. 
 
 And a sparse matrix solver from different linear algebra backgrounds (e.g. PETSc, Eigen, CuPy, and etc.) solves the linear system to get the solution at the next timestep.
 
-Generally, ''Assemble'' process takes 10~20 % of the total computation time and Solving linear system takes 80~90%.
+Generally, `Assemble` process takes 10~20 % of the total computation time and Solving linear system takes 80~90%.
 
-For one possible way to accelerate this simulation using GPU, this ''Assemble'' process can be run on GPUs. For this, ''assemble()'' function in FeniCS should be implemented using CUDA kernel because this function includes conducting integration on different meshes across domain. And this is not officially supported in FeniCSx yet, and it is non-trivial to implement this function using CUDA kernel. There are some ongoing works on GPU implementation of finite element assembly.
+For one possible way to accelerate this simulation using GPU, this `Assemble` process can be run on GPUs. For this, `assemble()` function in FeniCS should be implemented using CUDA kernel because this function includes conducting integration on different meshes across domain. And this is not officially supported in FeniCSx yet, and it is non-trivial to implement this function using CUDA kernel. There are some ongoing works on GPU implementation of finite element assembly.
 (<https://www.sciencedirect.com/science/article/pii/S0167819123000571>)
 (<https://www.youtube.com/watch?v=HV8zgxN9SFI>)
 
