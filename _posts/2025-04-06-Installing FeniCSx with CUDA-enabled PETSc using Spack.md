@@ -13,4 +13,5 @@ _The thumbnail image is created by chatGPT-4o_
 
 <br/>
 
-### 1. How to use GPU acceleration 
+### 1. Acclerating FenicsX simulation using GPUs
+Generally, Assemble process takes 1020 % of the total computation time and Solving linear system takes 8090%.
