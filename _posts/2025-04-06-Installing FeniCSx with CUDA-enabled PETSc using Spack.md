@@ -25,9 +25,19 @@ And a sparse matrix solver from different linear algebra backgrounds (e.g. PETSc
 
 Generally, for systems with large dofs such as LES simulations, `Assemble` process takes 10~20 % of the total computation time and Solving linear system takes 80~90%. Therefore, it is more efficient to accelerate the process of solving linear systems.
 
-PETSc provides GPU support for solving linear systems. To that end, the type of `petsc4py.PETSc.Vec` and 'petsc4py.PETSc.Mat' should be set as a GPU-compatible type using `petsc4py.PETSc.Vec.SetType('CUDA')` and the type of 'petsc4py.PETSc.Mat' 
+PETSc provides GPU support for solving linear systems. To that end, the type of `petsc4py.PETSc.Vec` and 'petsc4py.PETSc.Mat' should be set as a GPU-compatible type using `petsc4py.PETSc.Vec.SetType('CUDA')` and `petsc4py.PETSc.Vec.SetType('AIJCUSPARSE')`, respectively.
 
+'''
+A.setType("AIJCUSPARSE")
+x.setType("CUDA")
+b.setType("CUDA")
+'''
 
-A.setType("aijcusparse")
-x.setType("cuda")
-b.setType("cuda")
+To use this option, PETSc should be configured with cuda option. In addition, hypre option should be activated while configuring PETSc to use the hypre preconditioner. 
+
+In spack, PETSc with cuda and hypre option can be installed using this:
+
+'''
+spack install petsc +cuda +hypre
+'''
+
