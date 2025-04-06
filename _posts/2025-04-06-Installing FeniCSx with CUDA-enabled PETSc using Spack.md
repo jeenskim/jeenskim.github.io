@@ -14,4 +14,20 @@ _The thumbnail image is created by chatGPT-4o_
 <br/>
 
 ### 1. Acclerating FenicsX simulation using GPUs
-Generally, Assemble process takes 1020 % of the total computation time and Solving linear system takes 8090%.
+Let's say we are working on FEM simulation and want to get solution field at the next timestep. 
+This process includes two steps:
+1) `Assemble`
+2) Solving linear system, $Ax = b$
+
+Here, `Assemble` computes element matrix $A_e$ and element vector $b_e$ for each element, implements boundary conditions for $A_e$ & $b_e$, and constructs global matrix $A$ and global vector $b$. 
+
+And a sparse matrix solver from different linear algebra backgrounds (e.g. PETSc, Eigen, CuPy, and etc.) solves the linear system to get the solution at the next timestep.
+
+Generally, for systems with large dofs such as LES simulations, `Assemble` process takes 10~20 % of the total computation time and Solving linear system takes 80~90%. Therefore, it is more efficient to accelerate the process of solving linear systems.
+
+PETSc provides GPU support for solving linear systems. To that end, the type of `petsc4py.PETSc.Vec` and 'petsc4py.PETSc.Mat' should be set as a GPU-compatible type using `petsc4py.PETSc.Vec.SetType('CUDA')` and the type of 'petsc4py.PETSc.Mat' 
+
+
+A.setType("aijcusparse")
+x.setType("cuda")
+b.setType("cuda")
