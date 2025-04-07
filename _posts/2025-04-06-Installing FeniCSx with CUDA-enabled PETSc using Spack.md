@@ -230,7 +230,7 @@ if rank == 0:
 
 Results
 
-`$n=10^6$`
+`$$n=10^6$$`
 ```
 CPU (# of ranks = # of CPUs)
 # of ranks 1: 50.46 sec
@@ -247,7 +247,7 @@ GPU (# of ranks = # of GPUs)
 ```
 
 
-`$n=10^7$`
+`$$n=10^7$$`
 ```
 GPU (# of ranks = # of GPUs)
 # of ranks 1: 284.67 sec
