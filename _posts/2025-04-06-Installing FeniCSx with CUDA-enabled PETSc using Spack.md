@@ -33,6 +33,7 @@ x.setType("CUDA")
 b.setType("CUDA")
 ```
 
+### 2. Istalling FenicsX with CUDA-enabled PETSc
 To use this option, PETSc should be configured with cuda option. In addition, hypre option should be activated while configuring PETSc to use the hypre preconditioner. 
 
 In spack, PETSc with cuda and hypre option can be installed using this `spack.yaml` file. In addition, the cuda-enbaled version of mpich should be installed together.
@@ -91,3 +92,165 @@ Mat type: mpiaijcusparse
 Vec type: mpicuda
 Mat type: mpiaijcusparse
 ```
+
+### 3. Performance check
+We can check the performance of GPU acceleration by comparing it with CPUs.
+
+CPU execution code
+
+```
+from petsc4py import PETSc
+from mpi4py import MPI
+import time
+
+comm = PETSc.COMM_WORLD
+mpi_comm = MPI.COMM_WORLD
+rank = comm.getRank()
+
+mpi_comm.Barrier()
+t0 = MPI.Wtime()
+
+
+n = 1000000
+A = PETSc.Mat().createAIJ([n, n], comm=comm)
+A.setType("mpiaij")  # CPU matrix
+A.setFromOptions()
+A.setUp()
+
+start, end = A.getOwnershipRange()
+for i in range(start, end):
+    A.setValue(i, i, 2.0)
+    if i > 0:
+        A.setValue(i, i - 1, -1.0)
+    if i < n - 1:
+        A.setValue(i, i + 1, -1.0)
+A.assemble()
+
+b = PETSc.Vec().create(comm=comm)
+b.setSizes(n)
+b.setFromOptions()
+b.set(1.0)
+
+x = b.duplicate()
+
+ksp = PETSc.KSP().create(comm=comm)
+ksp.setOperators(A)
+ksp.setType("cg")
+ksp.getPC().setType("jacobi")
+ksp.setFromOptions()
+
+ksp.solve(b, x)
+
+mpi_comm.Barrier()
+t1 = MPI.Wtime()
+
+elapsed = t1 - t0
+max_elapsed = mpi_comm.reduce(elapsed, op=MPI.MAX, root=0)
+sum_elapsed = mpi_comm.reduce(elapsed, op=MPI.SUM, root=0)
+
+if rank == 0:
+    print(f"[CPU] Total Wall Time (Wtime): {max_elapsed:.4f} sec")
+    print(f"[CPU] Sum of All Ranks' Time: {sum_elapsed:.4f} sec")
+    print(f"[CPU] Residual norm: {ksp.getResidualNorm():.2e}")
+
+```
+
+GPU execution code
+
+```
+import os
+import sys
+from mpi4py import MPI
+
+rank = MPI.COMM_WORLD.Get_rank()
+
+from petsc4py import PETSc
+import time
+import torch  
+
+
+comm = PETSc.COMM_WORLD
+mpi_comm = MPI.COMM_WORLD
+rank = comm.getRank()
+
+mpi_comm.Barrier()
+t0 = MPI.Wtime()
+
+
+if torch.cuda.is_available():
+    print(f"[Rank {rank}] Using GPU {torch.cuda.current_device()} - {torch.cuda.get_device_name(torch.cuda.current_device())}")
+else:
+    print(f"[Rank {rank}] No GPU available")
+
+
+
+n = 10000000
+A = PETSc.Mat().createAIJ([n, n], comm=comm)
+A.setType("mpiaijcusparse")  # GPU matrix
+A.setFromOptions()
+A.setUp()
+
+start, end = A.getOwnershipRange()
+for i in range(start, end):
+    A.setValue(i, i, 2.0)
+    if i > 0:
+        A.setValue(i, i - 1, -1.0)
+    if i < n - 1:
+        A.setValue(i, i + 1, -1.0)
+A.assemble()
+
+b = PETSc.Vec().create(comm=comm)
+b.setSizes(n)
+b.setFromOptions()
+b.setType("cuda")  # GPU vector
+b.set(1.0)
+
+x = b.duplicate()
+
+ksp = PETSc.KSP().create(comm=comm)
+ksp.setOperators(A)
+ksp.setType("cg")
+ksp.getPC().setType("jacobi")
+ksp.setFromOptions()
+
+ksp.solve(b, x)
+
+mpi_comm.Barrier()
+t1 = MPI.Wtime()
+
+elapsed = t1 - t0
+max_elapsed = mpi_comm.reduce(elapsed, op=MPI.MAX, root=0)
+sum_elapsed = mpi_comm.reduce(elapsed, op=MPI.SUM, root=0)
+
+if rank == 0:
+    print(f"[GPU] Total Wall Time (Wtime): {max_elapsed:.4f} sec")
+    print(f"[GPU] Sum of All Ranks' Time: {sum_elapsed:.4f} sec")
+    print(f"[GPU] Residual norm: {ksp.getResidualNorm():.2e}")
+```
+
+Results
+
+`$n=10^6$`
+```
+CPU (# of ranks = # of CPUs)
+# of ranks 1: 50.46 sec
+# of ranks 2: 26.09 sec
+# of ranks 8: 6.60 sec
+# of ranks 16: 3.47 sec 
+# of ranks 32: 2.36 sec
+```
+
+```
+GPU (# of ranks = # of GPUs)
+# of ranks 1: 3.23 sec
+# of ranks 4: 2.6 sec
+```
+
+
+`$n=10^7$`
+```
+GPU (# of ranks = # of GPUs)
+# of ranks 1: 284.67 sec
+# of ranks 4: 73.04 sec
+```
+
