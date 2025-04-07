@@ -56,3 +56,38 @@ spack:
     unify: true
 ```
 
+The installation of `py-torch` from the source code could take 40-60 minutes.
+
+
+We can test Fenicsx with the cuda-enbaled PETSc with the following code:
+
+
+```
+from petsc4py import PETSc
+
+vec = PETSc.Vec().create(comm=PETSc.COMM_WORLD)
+vec.setSizes(100)
+vec.setType("mpicuda")
+vec.setFromOptions()
+vec.set(1.0)
+
+print("Vec type:", vec.getType())
+
+
+
+mat = PETSc.Mat().createAIJ([100, 100])
+mat.setFromOptions()
+mat.setType("mpiaijcusparse")
+mat.setUp()
+print("Mat type:", mat.getType())
+```
+
+Result
+```
+hjkim@x3206c0s25b0n0:/grand/NeuralDE/hjkim> mpiexec -n 2 python mpitest.py 
+Warning: Permanently added 'x3206c0s25b0n0.hsn.cm.polaris.alcf.anl.gov,10.201.0.255' (ECDSA) to the list of known hosts.
+Vec type: mpicuda
+Mat type: mpiaijcusparse
+Vec type: mpicuda
+Mat type: mpiaijcusparse
+```
