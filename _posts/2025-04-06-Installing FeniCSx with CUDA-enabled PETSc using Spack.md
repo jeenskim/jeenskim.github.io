@@ -27,17 +27,31 @@ Generally, for systems with large dofs such as LES simulations, `Assemble` proce
 
 PETSc provides GPU support for solving linear systems. To that end, the type of `petsc4py.PETSc.Vec` and 'petsc4py.PETSc.Mat' should be set as a GPU-compatible type using `petsc4py.PETSc.Vec.SetType('CUDA')` and `petsc4py.PETSc.Vec.SetType('AIJCUSPARSE')`, respectively.
 
-'''
+```
 A.setType("AIJCUSPARSE")
 x.setType("CUDA")
 b.setType("CUDA")
-'''
+```
 
 To use this option, PETSc should be configured with cuda option. In addition, hypre option should be activated while configuring PETSc to use the hypre preconditioner. 
 
-In spack, PETSc with cuda and hypre option can be installed using this:
+In spack, PETSc with cuda and hypre option can be installed using this `spack.yaml` file:
 
-'''
-spack install petsc +cuda +hypre
-'''
+```
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration settings.
+spack:
+  specs:
+    - petsc +cuda +hypre cuda_arch=80
+    - hypre +cuda cuda_arch=80
+    - fenics-dolfinx+adios2
+    - py-fenics-dolfinx cflags=-O3 fflags=-O3
+    - py-torch+cuda cuda_arch=80
+    - py-pip
+  view: true
+  concretizer:
+    unify: true
+```
 
