@@ -243,7 +243,7 @@ CPU (# of ranks = # of CPUs)
 ```
 GPU (# of ranks = # of GPUs)
 # of ranks 1: 3.23 sec
-# of ranks 4: 2.6 sec
+# of ranks 2: 2.7 sec
 ```
 
 
