@@ -35,7 +35,7 @@ b.setType("CUDA")
 
 To use this option, PETSc should be configured with cuda option. In addition, hypre option should be activated while configuring PETSc to use the hypre preconditioner. 
 
-In spack, PETSc with cuda and hypre option can be installed using this `spack.yaml` file:
+In spack, PETSc with cuda and hypre option can be installed using this `spack.yaml` file. In addition, the cuda-enbaled version of mpich should be installed together.
 
 ```
 # This is a Spack Environment file.
@@ -49,6 +49,7 @@ spack:
     - fenics-dolfinx+adios2
     - py-fenics-dolfinx cflags=-O3 fflags=-O3
     - py-torch+cuda cuda_arch=80
+    - mpich +cuda
     - py-pip
   view: true
   concretizer:
