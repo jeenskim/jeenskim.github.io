@@ -48,6 +48,12 @@ install mpi4torch
 pip install mpi4torch --no-build-isolation
 ```
 
+install torch_geometric
+
+```
+pip install torch_geometric
+```
+
 <br/>
 
 ### 2. Solve 2D Poisson equation
