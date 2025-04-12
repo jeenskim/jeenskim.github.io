@@ -55,6 +55,45 @@ install torch_geometric
 pip install torch_geometric
 ```
 
+
+To use `adios4dolfinx` for writing/reading checkpoints, use following `.yaml` file:
+```
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration settings.
+spack:
+  # add package specs to the `specs` list
+  specs:
+  - fenics-dolfinx+adios2
+  - py-fenics-dolfinx cflags=-O3 fflags=-O3
+  - py-torch+cuda cuda_arch=80
+  - py-pip
+  - gmsh
+  - adios2+python
+  view: true
+  concretizer:
+    unify: true
+```
+
+install adios4dolfinx:
+```
+pip install adios4dolfinx
+```
+
+When python cannot find the python bind adios2, add these following lines at the beginning of the code:
+
+```
+import sys
+sys.path.append("/lus/grand/projects/NeuralDE/hjkim/spack/opt/spack/linux-sles15-zen3/gcc-12.3.0/adios2-2.10.2-txcx5uunmtwgkgv55bbe7ehufkl522no/venv-1.0-5aqdxfkkynjgxyyywxsedw4igkv6z3xx/lib/python3.12/site-packages")
+import adios4dolfinx
+```
+
+
+
+
+
+
 <br/>
 
 ### 2. Solve 2D Poisson equation
