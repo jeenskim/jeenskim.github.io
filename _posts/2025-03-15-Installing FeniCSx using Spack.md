@@ -35,6 +35,7 @@ Information about cuda_arc : (<https://arnon.dk/matching-sm-architectures-arch-a
 
 <br/>
 
+install gmsh
 ```
 spack add gmsh
 spack install gmsh
