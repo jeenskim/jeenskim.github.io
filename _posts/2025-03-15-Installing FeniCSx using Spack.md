@@ -42,6 +42,12 @@ spack install gmsh
 pip install gmsh
 ```
 
+install mpi4torch
+
+```
+pip install mpi4torch --no-build-isolation
+```
+
 <br/>
 
 ### 2. Solve 2D Poisson equation
