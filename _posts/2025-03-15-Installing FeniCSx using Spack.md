@@ -53,8 +53,7 @@ install torch_geometric
 
 ```
 pip install torch_geometric
-pip install torch-scatter torch-sparse torch-cluster torch-spline-conv \
-    -f https://data.pyg.org/whl/torch-2.6.0+cu121.html
+pip install torch-scatter torch-sparse torch-cluster torch-spline-conv -f https://data.pyg.org/whl/torch-2.6.0+cu121.html
 ```
 
 
