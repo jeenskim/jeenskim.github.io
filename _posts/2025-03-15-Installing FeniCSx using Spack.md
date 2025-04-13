@@ -124,6 +124,30 @@ pip install mpi4torch
 pip install torch_geometric
 pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.6.0+cu124.html
 ```
+<br/>
+
+```
+pip install adios4dolfinx
+```
+
+When python cannot find the python bind adios2, add these following lines at the beginning of the code:
+
+```
+hjkim@x3003c0s7b1n0:/grand/NeuralDE/hjkim/FeniCSx/NS> spack find -p adios2
+==> In environment MLFenicsx
+==> 9 root specs
+[+] adios2+python  [+] cuda@12.4  [+] cudnn  [+] fenics-dolfinx+adios2  [+] gmsh  [+] nccl cuda_arch=80  [+] py-fenics-dolfinx cflags=-O3 fflags=-O3   [+] py-pip  [+] python@3.11
+
+-- linux-sles15-zen3 / gcc@12.3.0 -------------------------------
+adios2@2.10.2  /lus/grand/projects/NeuralDE/hjkim/spack/opt/spack/linux-sles15-zen3/gcc-12.3.0/adios2-2.10.2-qrwswoq6eurw7umm62hlecac3ck4ic6w
+```
+
+```
+import sys
+sys.path.append("/lus/grand/projects/NeuralDE/hjkim/spack/opt/spack/linux-sles15-zen3/gcc-12.3.0/adios2-2.10.2-qrwswoq6eurw7umm62hlecac3ck4ic6w/venv-1.0-6tlcx5kn3anm6pl5qj5stfe3xoptbag2/lib/python3.11/site-packages")
+import adios4dolfinx
+```
+
 
 
 <br/>
