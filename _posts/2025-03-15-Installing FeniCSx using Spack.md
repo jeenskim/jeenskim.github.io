@@ -94,7 +94,7 @@ import adios4dolfinx
 
 
 #### 1.1 Install FeniCSx environment with torch
-Install Fenicx and CUDA using spack and install torch-related library using pip
+Install Fenicx and CUDA using spack and install torch-related libraries using pip
 
 ```
 # This is a Spack Environment file.
