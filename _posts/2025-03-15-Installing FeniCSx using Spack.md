@@ -53,7 +53,10 @@ install torch_geometric
 
 ```
 pip install torch_geometric
+pip install torch-scatter torch-sparse torch-cluster torch-spline-conv \
+    -f https://data.pyg.org/whl/torch-2.6.0+cu121.html
 ```
+
 
 
 To use `adios4dolfinx` for writing/reading checkpoints, use following `.yaml` file:
