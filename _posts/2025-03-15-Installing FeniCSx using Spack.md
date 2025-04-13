@@ -93,7 +93,37 @@ import adios4dolfinx
 
 
 
+#### 1.1 Install FeniCSx environment with torch
 
+```
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration settings.
+spack:
+  # add package specs to the `specs` list
+  specs:
+  - fenics-dolfinx+adios2
+  - py-fenics-dolfinx cflags=-O3 fflags=-O3
+  - python@3.11
+  - py-pip
+  - cuda@12.4
+  - cudnn
+  - nccl cuda_arch=80
+  - gmsh
+  - adios2+python
+  view: true
+  concretizer:
+    unify: true
+```
+<br/>
+
+```
+pip install torch==2.6.0+cu124 --index-url https://download.pytorch.org/whl/cu124
+pip install mpi4torch
+pip install torch_geometric
+pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.6.0+cu124.html
+```
 
 
 <br/>
