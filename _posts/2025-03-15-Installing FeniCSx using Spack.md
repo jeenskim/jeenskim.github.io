@@ -24,7 +24,7 @@ git clone https://github.com/spack/spack.git
 spack env create fenicsx-env
 spack env activate fenicsx-env
 spack add fenics-dolfinx+adios2 py-fenics-dolfinx cflags="-O3" fflags="-O3"
-spack add py-torch+cuda cuda_arc=80
+spack add py-torch+cuda cuda_arc=80 (or cuda_arch=80)
 spack add py-pip
 spack install
 ```
