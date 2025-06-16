@@ -33,6 +33,19 @@ For NVIDIA A100 GPU, `cuda_arc = 80`
 
 Information about cuda_arc : (<https://arnon.dk/matching-sm-architectures-arch-and-gencode-for-various-nvidia-cards/>)
 
+When having compiler path errors, change the programming environment to `PrgEnv-nvhpc` or `PrgEnv-nvidia` using following:
+```
+module load PrgEnv-nvhpc
+```
+
+or
+
+```
+module load PrgEnv-nvidia
+```
+
+(the name of the Programming environment may vary depending on the HPC system)
+
 <br/>
 
 install gmsh
