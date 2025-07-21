@@ -58,6 +58,8 @@ Information about cuda_arc : (<https://arnon.dk/matching-sm-architectures-arch-a
 
 #### 1.3. Installing packages using the pre-defined environment file
 
+(NOTE) Installing Fenicsx using spack can be done in Login node, where only CPUs are available, becuase spack is hardware-independent.
+
 ```
 spack install
 ```
