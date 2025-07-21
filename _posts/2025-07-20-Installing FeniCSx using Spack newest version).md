@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to install FeniCSx using Spack
+title: How to install FeniCSx using Spack (newest version)
 cover-img: /assets/img/path.jpg
 thumbnail-img: /assets/img/Fenicsx-spack.png
 share-img: /assets/img/Fenicsx-spack.png
