@@ -31,7 +31,7 @@ After activating your spack environment for FeniCSx, by using `which cmake` comm
 
 Also, if ninja is not installed, you can install ninja using `spack install ninja` and `spack load ninja`.
 
-Then, you can build libraries using the following command.
+Then, you can build dolfinx_mpc libraries using the following command.
 ```
 cmake -G Ninja \
   -DCMAKE_BUILD_TYPE=Release \
@@ -39,7 +39,7 @@ cmake -G Ninja \
   -B build-dir cpp/
 ```
 
-And you can install libraries using the following command.
+And you can install dolfinx_mpc libraries using the following command.
 ```
 ninja -j3 install -C build-dir
 ```
