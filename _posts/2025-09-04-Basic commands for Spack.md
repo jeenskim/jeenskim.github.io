@@ -13,7 +13,12 @@ _The thumbnail image is created by chatGPT-4o_
 
 <br/>
 
-### 1. Cloning git directory of dolfinx_mpc and matching a version with dolfinx
+### 1. `spack config blame packages`
+
+Shows where package configuration entries come from (`packages.yaml`) across different scopes (system, site, user, environment).
+
+Similar to `git blame` — helps track the origin of a particular package setting.
+
 
 ```
 git clone https://github.com/jorgensd/dolfinx_mpc.git
