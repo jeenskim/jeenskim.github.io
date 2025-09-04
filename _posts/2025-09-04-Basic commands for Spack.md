@@ -20,49 +20,90 @@ Shows where package configuration entries come from (`packages.yaml`) across dif
 Similar to `git blame` — helps track the origin of a particular package setting.
 
 
-```
-git clone https://github.com/jorgensd/dolfinx_mpc.git
-cd dolfinx_mpc
-git checkout v0.9.0
-```
+### 2. `spack compilers`
 
-### 2. Build libraries using cmake
+Displays all compilers currently detected and registered by Spack.
 
-#### 2.1. Setting cmake, ninja, c and c++ compilers
+Reads from `~/.spack/compilers.yaml` or environment-specific configs.
 
-Since packages for FeniCSx including dolfinx have been installed using spack, it is important to have the same versions of cmake, c & c++ compilers and other python-c binding packages as used when installing Fenicsx, which is called Application Binary Interface (ABI) compatibility.
 
-After activating your spack environment for Fenicsx, by using `which cmake` command, you can check which version of cmake is loaded. If it does not match with the one in spack environment, you can use `spack load cmake` to activate the same version of cmake used for installing dolfinx.
+### 3. `spack compiler remove gcc@13.2.1`
 
-Also, if ninja is not installed, you can install ninja using `spack install ninja` and `spack load ninja`.
+Removes the registered `gcc@13.2.1` compiler from Spack’s config.
 
-You can check the version of c & c++ compilers used for installing dolfinx using `spack find`, and the current loaded compilers using `echo $CC` or `echo $CXX`. If they don't match, you can match them using the following command:
+Does not uninstall `gcc` from the system — it only unregisters it from Spack.
 
-```
-export CC=/usr/bin/gcc-12
-export CXX=/usr/bin/g++-12
-```
 
-Also, if `nanobind` and `scikit-build-core` are not seen by `pip` (this happens because these libraries are installed as build-dependencies), you can load them using `spack load py-nanobind@2.5.0` and `spack load py-scikit-build-core@0.10.7`.
+### 4. `spack compiler add /opt/cray/pe/gcc-native/12/bin`
 
-Then, you can build dolfinx_mpc libraries using the following command.
-```
-cmake -G Ninja \
-  -DCMAKE_BUILD_TYPE=Release \
-  -DCMAKE_INSTALL_PREFIX=./install-dir \
-  -B build-dir cpp/
-```
+Registers a new compiler by scanning the given path for executables (`gcc`, `g++`, `gfortran`).
 
-And you can install dolfinx_mpc libraries using the following command.
-```
-ninja -j3 install -C build-dir
-```
+Commonly used in HPC systems for vendor-provided compilers (Cray, Intel, NVIDIA, AOCC, etc.).
 
-Lastly, you can install python bind for dolfinx_mpc using the following command.
 
-```
-python3 -m pip -v install --config-settings=cmake.build-type="Release" --config-settings=cmake.args="-DCMAKE_PREFIX_PATH=/lus/grand/projects/NeuralDE/hjkim/dolfinx_mpc/install-dir" --no-build-isolation ./python -U
-```
+### 5. `spack compiler info gcc@13.2.1`
+
+Shows detailed information about the specified compiler.
+
+Includes installation path, compiler executables, ABI support, environment variables, etc.
+
+### 6. `spack compiler list`
+
+Lists all compilers registered in Spack in a summarized format.
+
+More concise than spack compilers.
+
+### 7. `spack spec fenics-dolfinx`
+
+Displays the dependency tree (specification) of the fenics-dolfinx package.
+
+Shows compiler, package versions, build variants (+mpi, +cuda, etc.), and dependencies.
+
+Very useful before installation to confirm the full spec.
+
+### 8. `spack concretize`
+
+Resolves and finalizes the package specification into a fully concrete form.
+
+For example: `fenics-dolfinx` → `fenics-dolfinx@0.8.0 %gcc@12.3.0 ^petsc@3.20.0` ...
+
+Ensures all versions and dependencies are pinned down before installation.
+
+### 9. `spack concretize --fresh -f`
+
+`--fresh`: Ignores cached concretizations and recomputes dependencies from scratch.
+
+`-f` (force): Runs even if the environment is already concretized.
+
+Useful after changing environment settings or resolving dependency conflicts.
+
+### 10. `spack env st`
+
+This is shorthand for `spack env status`.
+
+Shows the currently active environment, or reports if no environment is active.
+
+Useful for confirming whether you’re inside a particular Spack environment.
+
+### 11. `spack env deactivate` (sometimes written as `spack deactivate`)
+
+Deactivates the currently active Spack environment.
+
+After running this, commands like spack install will no longer apply to that environment, but to the global Spack instance instead.
+
+### 12. `spack find`
+
+Lists all packages that are currently installed in your Spack installation.
+
+By default, it shows unique specs (collapsed so that identical hashes/variants are grouped).
+
+### 13. `spack find -c`
+
+Stands for “concretized”.
+
+Shows each package as it was fully concretized — including compiler, architecture, variants, and dependency hash.
+
+Unlike plain spack find, this does not collapse identical specs, so you see the full details.
 
 
 
