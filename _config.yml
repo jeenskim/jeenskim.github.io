@@ -24,7 +24,7 @@ navbar-links:
     - Profile: "aboutme"
     - Trip: "aboutme"
   Research Post: "/"
-  CV: "CV-2.pdf"
+  CV: "CV.pdf"
 
 ################
 # --- Logo --- #
@@ -50,7 +50,7 @@ round-avatar: true
 # You can change the order that they show up on the page by changing the order here.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "hojin.kim@psu.edu"
+  email: "hojin.kim@purdue.edu"
   linkedin: "hojin-kim-970993237"
   
   
