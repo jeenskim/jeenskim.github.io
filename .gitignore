@@ -1,13 +1,4 @@
-# project
-_site
-.sass-cache
-.vagrant
-
-# general
+.claude/
+CV-3.pdf
 .DS_Store
-Thumbs.db
-ehthumbs.db
-
-Gemfile.lock
-
-beautiful-jekyll-theme-*.gem
+*.tmp

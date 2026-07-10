@@ -1,4 +1,233 @@
----
-layout: home
-title: Hojin Kim's Website
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hojin Kim</title>
+  <meta name="description" content="Hojin Kim — PhD student in Mechanical Engineering at Purdue University, working on scientific machine learning for computational fluid dynamics." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top">Hojin&nbsp;Kim</a>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#talks">Talks</a>
+        <a href="#awards">Awards</a>
+        <a class="nav-cv" href="cv.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="wrap hero-inner" id="about">
+      <div class="hero-photo">
+        <img src="profile.jpg" alt="Hojin Kim"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="avatar-fallback" aria-hidden="true">HK</div>
+      </div>
+      <div class="hero-text">
+        <p class="eyebrow">PhD Student · Purdue University</p>
+        <h1>Hojin Kim</h1>
+        <p class="tagline">Scientific machine learning for <span>computational fluid dynamics</span> — building models that are generalizable, interpretable, and grounded in physics.</p>
+        <div class="links">
+          <a href="mailto:hojin.kim@purdue.edu">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z" fill="none"/><path d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm0 2v.4l8 5 8-5V7H4zm16 2.3-8 5-8-5V17h16V9.3z"/></svg>
+            Email
+          </a>
+          <a href="https://scholar.google.com/citations?user=OK4OyvMAAAAJ&hl=en" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM4 13.2v3.3C4 18.4 7.6 20 12 20s8-1.6 8-3.5v-3.3l-8 4.4-8-4.4z"/></svg>
+            Scholar
+          </a>
+          <a href="https://www.linkedin.com/in/hojin-kim-970993237" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.4h3.1V21H3.4V8.4zM9.1 8.4h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.09v-5.58c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94V21H9.1V8.4z"/></svg>
+            LinkedIn
+          </a>
+          <a class="btn-primary" href="cv.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.2l3.6-3.6L17 11l-5 5-5-5 1.4-1.4L12 13.2V3h0zM5 19h14v2H5z"/></svg>
+            CV
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <!-- At a glance -->
+    <section class="stats">
+      <div class="stat"><span class="num">6</span><span class="lbl">Publications</span></div>
+      <div class="stat"><span class="num">12+</span><span class="lbl">Talks &amp; posters</span></div>
+      <div class="stat"><span class="num">3</span><span class="lbl">Journals reviewed</span></div>
+      <div class="stat"><span class="num">SNU→PSU→Purdue</span><span class="lbl">Path</span></div>
+    </section>
+
+    <!-- Bio -->
+    <section id="bio">
+      <h2><span class="mark"></span>About</h2>
+      <div class="prose">
+        <p>
+          I am a Ph.D. student in Mechanical Engineering at <strong>Purdue University</strong>, advised by
+          Prof. Romit Maulik. My work sits at the intersection of computational fluid dynamics
+          and machine learning: I develop scientific machine learning methods that are
+          generalizable, interpretable, and consistent with the underlying physics.
+        </p>
+        <p>
+          I am particularly interested in differentiable-physics approaches to <strong>turbulence
+          closure modeling</strong> on unstructured grids, interpretable deep learning for dynamical
+          systems, and generative models for reconstructing high-speed flows. Previously, I earned
+          my B.S. and M.S. in Aerospace Engineering from Seoul National University. In summer 2026,
+          I will join <strong>Lawrence Livermore National Laboratory</strong> as a Graduate Research Intern.
+        </p>
+      </div>
+      <ul class="tags">
+        <li>Computational Fluid Dynamics</li>
+        <li>Scientific Machine Learning</li>
+        <li>Turbulence Modeling</li>
+        <li>Differentiable Physics</li>
+        <li>Interpretable Deep Learning</li>
+        <li>Optimization</li>
+      </ul>
+    </section>
+
+    <!-- News -->
+    <section id="news">
+      <h2><span class="mark"></span>News</h2>
+      <ul class="news">
+        <li><span class="news-date">May 2026</span><span>Starting a summer research internship at <strong>Lawrence Livermore National Laboratory</strong> on ML for multiphase fluid dynamics.</span></li>
+        <li><span class="news-date">Jun 2026</span><span>Presenting our differentiable-physics turbulence closure work at <strong>USNC-TAM</strong>, Pasadena.</span></li>
+        <li><span class="news-date">Mar 2026</span><span>New preprint on <strong>conditional diffusion</strong> for hypersonic boundary-layer reconstruction (arXiv:2606.15023).</span></li>
+        <li><span class="news-date">Jan 2026</span><span>Talk on interpreting learned physics in Neural ODEs via DEIM at the <strong>Joint Mathematics Meetings</strong>.</span></li>
+      </ul>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+      <h2><span class="mark"></span>Publications</h2>
+      <p class="muted small"><span class="me">H. Kim</span> denotes the author of this site.</p>
+      <div class="pubs">
+        <article class="pub">
+          <div class="pub-tile g1"><span>2026</span></div>
+          <div class="pub-body">
+            <div class="pub-title">Multiscale Hypersonic Boundary Layer Reconstruction via Spectral Binning and Subdomain-wise Conditional Diffusion</div>
+            <div class="pub-authors"><span class="me">H. Kim</span>, D. Chakraborty, T. Toki, C. Scalo, R. Maulik</div>
+            <div class="pub-meta"><span class="badge review">Under review</span></div>
+            <div class="pub-links"><a href="https://arxiv.org/abs/2606.15023" target="_blank" rel="noopener">arXiv ↗</a></div>
+          </div>
+        </article>
+        <article class="pub">
+          <div class="pub-tile g2"><span>2025</span></div>
+          <div class="pub-body">
+            <div class="pub-title">Towards Interpretable Deep Learning and Analysis of Dynamical Systems via the Discrete Empirical Interpolation Method</div>
+            <div class="pub-authors"><span class="me">H. Kim</span>, R. Maulik</div>
+            <div class="pub-meta"><span class="badge review">Under review</span></div>
+            <div class="pub-links"><a href="https://arxiv.org/abs/2510.21852" target="_blank" rel="noopener">arXiv ↗</a></div>
+          </div>
+        </article>
+        <article class="pub">
+          <div class="pub-tile g3"><span>2026</span></div>
+          <div class="pub-body">
+            <div class="pub-title">Generalizable data-driven turbulence closure modeling on unstructured grids with differentiable physics</div>
+            <div class="pub-authors"><span class="me">H. Kim</span>, V. Shankar, V. Viswanathan, R. Maulik</div>
+            <div class="pub-meta"><span class="badge pub">Published</span> <span class="venue">Computers &amp; Fluids, 318, 107200</span></div>
+            <div class="pub-links"><a href="https://doi.org/10.1016/j.compfluid.2026.107200" target="_blank" rel="noopener">DOI ↗</a></div>
+          </div>
+        </article>
+        <article class="pub">
+          <div class="pub-tile g4"><span>2025</span></div>
+          <div class="pub-body">
+            <div class="pub-title">Interpretable A-posteriori error indication for graph neural network surrogate models</div>
+            <div class="pub-authors">S. Barwey, <span class="me">H. Kim</span>, R. Maulik</div>
+            <div class="pub-meta"><span class="badge pub">Published</span> <span class="venue">Comput. Methods Appl. Mech. Eng., 433, 117509</span></div>
+            <div class="pub-links"><a href="https://doi.org/10.1016/j.cma.2024.117509" target="_blank" rel="noopener">DOI ↗</a></div>
+          </div>
+        </article>
+        <article class="pub">
+          <div class="pub-tile g5"><span>2025</span></div>
+          <div class="pub-body">
+            <div class="pub-title">Improved Conceptual Design of eVTOL Aircraft: Considering Rotor–Rotor Interactional Effects</div>
+            <div class="pub-authors"><span class="me">H. Kim</span>, J. Lee, D. Lee, K. Yee</div>
+            <div class="pub-meta"><span class="badge pub">Published</span> <span class="venue">Int. J. Aeronautical and Space Sciences</span></div>
+            <div class="pub-links"><a href="https://doi.org/10.1007/s42405-025-00888-9" target="_blank" rel="noopener">DOI ↗</a></div>
+          </div>
+        </article>
+        <article class="pub">
+          <div class="pub-tile g6"><span>2024</span></div>
+          <div class="pub-body">
+            <div class="pub-title">Data-driven physics-informed neural networks: A digital twin perspective</div>
+            <div class="pub-authors">S. Yang, <span class="me">H. Kim</span>, Y. Hong, K. Yee, R. Maulik, N. Kang</div>
+            <div class="pub-meta"><span class="badge pub">Published</span> <span class="venue">Comput. Methods Appl. Mech. Eng., 428, 117075</span></div>
+            <div class="pub-links"><a href="https://doi.org/10.1016/j.cma.2024.117075" target="_blank" rel="noopener">DOI ↗</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Talks -->
+    <section id="talks">
+      <h2><span class="mark"></span>Selected Talks &amp; Conferences</h2>
+      <ul class="talks">
+        <li><span class="talk-title">Generalizable data-driven turbulence closure modeling on unstructured grids with differentiable physics</span><span class="talk-venue">USNC-TAM · Pasadena, CA · Jun 2026</span></li>
+        <li><span class="talk-title">Conditional Diffusion Models for High-speed Boundary Layer Reconstructions</span><span class="talk-venue">SIAM UQ26 · Minneapolis, MN · Mar 2026</span></li>
+        <li><span class="talk-title">Interpreting Learned Physics in Neural ODEs through a DEIM-based Spatiotemporal Analysis</span><span class="talk-venue">Joint Mathematics Meetings · Washington DC · Jan 2026</span></li>
+        <li><span class="talk-title">Interpreting Learned Physics in Neural ODEs through a DEIM-based Spatiotemporal Analysis</span><span class="talk-venue">APS DFD 78th Meeting · Houston, TX · Nov 2025</span></li>
+        <li><span class="talk-title">Differentiable physics for generalizable closure modeling of separated flows</span><span class="talk-venue">SIAM CSE25 · Fort Worth, TX · Mar 2025</span></li>
+        <li><span class="talk-title">Differentiable physics for generalizable closure modeling of separated flows</span><span class="talk-venue">APS DFD 77th Meeting · Salt Lake City, UT · Nov 2024</span></li>
+      </ul>
+      <details class="more">
+        <summary>Workshops &amp; earlier presentations</summary>
+        <ul class="talks">
+          <li><span class="talk-title">Towards Interpretable Deep Learning via the Discrete Empirical Interpolation Method</span><span class="talk-venue">AAAI XAI4Science Workshop · Singapore · Jan 2026</span></li>
+          <li><span class="talk-title">Scalable, interpretable, and explainable scientific machine learning with geometric deep learning</span><span class="talk-venue">18th USNCCM · Chicago, IL · Jul 2025</span></li>
+          <li><span class="talk-title">Differentiable physics for generalizable closure modeling of separated flows</span><span class="talk-venue">Purdue CCAM SciML Workshop · West Lafayette, IN · Sep 2025</span></li>
+          <li><span class="talk-title">Scalable, adaptive, and explainable scientific machine learning for surrogate models of PDEs</span><span class="talk-venue">AAAI Bridge Program (KGML) · Philadelphia, PA · Feb 2025</span></li>
+          <li><span class="talk-title">Scalable, adaptive, and explainable scientific machine learning for surrogate models of PDEs</span><span class="talk-venue">AAAI Symposium on Computational Scientific Discovery · Arlington, VA · Nov 2024</span></li>
+          <li><span class="talk-title">Design Methodology of Urban Air Mobility for Noise Mitigation at the Conceptual Design Stage</span><span class="talk-venue">48th European Rotorcraft Forum · Winterthur, Switzerland · Sep 2022</span></li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- Awards -->
+    <section id="awards">
+      <h2><span class="mark"></span>Honors &amp; Awards</h2>
+      <ul class="awards">
+        <li><span class="year">2026</span><span>Purdue Graduate Student Government Travel Award</span></li>
+        <li><span class="year">2025</span><span>Selected participant, Argonne Training Program on Extreme-Scale Computing (ATPESC)</span></li>
+        <li><span class="year">2025</span><span>Student Travel Award, SIAM CSE25</span></li>
+        <li><span class="year">2024</span><span>Ruth Young Boucke Graduate Fellowship, Penn State</span></li>
+        <li><span class="year">2024</span><span>Robert W. Graham Endowed Graduate Fellowship, Penn State</span></li>
+        <li><span class="year">2015–22</span><span>Merit-based &amp; Work-study Scholarships, Seoul National University</span></li>
+      </ul>
+    </section>
+
+    <!-- Service -->
+    <section id="service">
+      <h2><span class="mark"></span>Professional Service</h2>
+      <p class="prose">
+        Journal reviewer for <em>Journal of Fluid Mechanics</em>,
+        <em>Journal of Computational Physics</em>, and <em>Physics of Fluids</em>.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year"></span> Hojin Kim · West Lafayette, IN</p>
+      <p class="footer-links">
+        <a href="mailto:hojin.kim@purdue.edu">Email</a>
+        <a href="https://scholar.google.com/citations?user=OK4OyvMAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+        <a href="https://www.linkedin.com/in/hojin-kim-970993237" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
