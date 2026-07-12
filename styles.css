@@ -185,6 +185,7 @@ article.pub:hover {
 .pub-tile.g4 { background: linear-gradient(135deg, #0f766e, #2f56b5); }
 .pub-tile.g5 { background: linear-gradient(135deg, #b45309, #6d4bd8); }
 .pub-tile.g6 { background: linear-gradient(135deg, #2f56b5, #0ea5e9); }
+.pub-tile.g7 { background: linear-gradient(135deg, #7c3aed, #2f56b5); }
 .pub-body { flex: 1; min-width: 0; }
 .pub-title { font-weight: 600; line-height: 1.4; }
 .pub-authors { color: var(--muted); font-size: 0.9rem; margin-top: 3px; }
